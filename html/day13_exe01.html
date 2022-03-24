@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block vs Inline</title>
+  <style>
+    td{
+      outline: 1px solid black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- block -->
+  <!-- <h1>제목 태그(hn태그)</h1>
+  <h2>제목 태그(hn태그)</h2>
+  <h3>제목 태그(hn태그)</h3>
+  <h4>제목 태그(hn태그)</h4>
+  <h5>제목 태그(hn태그)</h5>
+  <h6>제목 태그(hn태그)</h6>
+
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quo, est ullam pariatur temporibus voluptates doloremque dolorum dolor ab vitae mollitia facilis repellat asperiores earum? Eos tempore excepturi nostrum in.ores earum? Eos tempore excepturi nostrum iores earum? Eos tempore excepturi nostrum iores earum? Eos tempore excepturi nostrum i 텍스트 단락 태그</p>
+
+  <ol>
+    <li>리스트1</li>
+    <li>리스트2</li>
+    <li>리스트3</li>
+    <li>리스트4</li>
+    <li>리스트5</li>
+  </ol>
+
+  <ul>
+    <li>리스트1</li>
+    <li>리스트2</li>
+    <li>리스트3</li>
+    <li>리스트4</li>
+    <li>리스트5</li>
+  </ul>
+
+  <dl>
+    <dt>설명 타이틀</dt>
+    <dd>설명 내용</dd>
+    <dd>설명 내용</dd>
+    <dd>설명 내용</dd>
+    
+    <dt>설명 타이틀</dt>
+    <dd>설명 내용</dd>
+    <dd>설명 내용</dd>
+    <dd>설명 내용</dd>
+  </dl>
+
+  <div>div 태그</div>
+
+  <hr>
+
+  <address>주소를 입력합니다.</address> -->
+
+
+  <!-- inline -->
+  <!-- <b>굵은 글씨 표현 태그</b>
+
+  <strong>굵은 글씨 표현 태그</strong>
+
+  <i>이탤릭 태그</i>
+
+  <em>기울림 태그</em>
+
+  <a href="https://www.naver.com" target="_blank">네이버로 이동</a>
+  <a href="./day12_exe01.html" >다른 파일로 이동</a>
+
+  <img src="./images/pic01.jpg" alt="개">
+  <img src="./images/pic02.jpg" alt="고양이">
+  
+  <span>인라인계의 div</span> -->
+  <input type="text">
+  <input type="password">
+  <input type="checkbox">
+
+  <small>작은 글씨</small>
+  <sup>위에 첨자</sup>
+  <sub>아래 첨자</sub>
+
+  <hr>
+  <!-- 테이블 -->
+  <table>
+    <tr>
+      <td colspan="2">제목1</td>      
+      <td rowspan="2">제목3</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <table>
+    <tr>
+      <td>제목</td>
+      <td>제목</td>
+      <td>제목</td>
+      <td>제목</td>
+    </tr>
+    <tr>
+      <td colspan="2">내용</td>
+      <td colspan="2">내용</td>
+    </tr>
+    <tr>
+      <td rowspan="2">내용</td>
+      <td>내용</td>
+      <td rowspan="2">내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <table>
+    <tr>
+      <td colspan="2">제목</td>
+      <td>제목</td>
+      <td>제목</td>
+    </tr>
+    <tr>
+      <td rowspan="3">내용</td>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td colspan="3">내용</td>
+    </tr>
+    <tr>
+      <td colspan="2">내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <!-- input -->
+  <form action="">
+    <label for="">아이디</label><input type="text">
+    <label for="">패스워드</label><input type="password">
+    <br>
+    <label for="">전화번호</label><input type="number">
+    <label for="">이메일</label><input type="email">
+    <br>
+    <input type="submit" value="제출하기">
+    <input type="button" value="버튼">
+    <input type="reset" value="되돌리기">
+    <br>
+    <label for="">농구</label><input type="checkbox" name="sports">
+    <label for="">축구</label><input type="checkbox" name="sports">
+    <label for="">야구</label><input type="checkbox" name="sports">
+    <label for="">배구</label><input type="checkbox" name="sports">
+    <br>
+    <label for="apple">사과</label><input type="radio" name="fruits" id="apple">
+    <label for="strawberry">딸기</label><input type="radio" name="fruits" id="strawberry">
+    <label for="pear">배</label><input type="radio" name="fruits" id="pear">
+    <label for="banana">바나나</label><input type="radio" name="fruits" id="banana">
+
+
+  <select name="" id="">
+    <option value="apple">사과</option>
+    <option value="strawberry">딸기</option>
+    <option value="pear">배</option>
+    <option value="banana">바나나</option>
+  </select>
+
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  </form>
+
+
+
+  <fieldset>
+    <legend>로그인</legend>
+    <form action="">
+      <label for="">&lt;아이디&gt;</label><input type="text" placeholder="ID 입력">
+      <label for="">패스워드&amp;&quot;&num;&semi;&Hat;&apos;&nbsp;ㄴ</label><input type="password">
+     <input type="submit" value="로그인">
+    </form>
+  </fieldset>
+
+  <hr>
+  <fieldset>
+    <legend>로그인</legend>
+    <form action="">
+      <label for="">아이디:</label> <input type="text" placeholder="아이디를 입력해주세요.">
+      <br>
+      <label for="">비밀번호:</label> <input type="password" value="비밀번호">
+      <br>
+      <input type="submit" value="로그인">
+      <input type="button" value="회원가입">
+      <input type="reset" value="다시입력">
+    </form>
+  </fieldset>
+
+  <fieldset>
+    <form action="">
+      <legend>회원가입</legend>
+      <label for="">이름:</label> <input type="text" placeholder="이름을 입력해주세요."> <br>
+      <label for="">나이:</label> <input type="number"> <br>
+      <label for="">성별:</label> 
+      <input type="radio" id="men"><label for="men">남자</label>
+      <input type="radio" id="women"><label for="women">여자</label> <br>
+      <label for="">이메일:</label> <input type="email"> <br>
+      <label for="">좋아하는 음식:</label> 
+      <input type="checkbox" id="korean"><label for="korean">한식</label>
+      <input type="checkbox" id="chinese"><label for="chinese">중식</label>
+      <input type="checkbox" id="japanese"><label for="japanese">일식</label>
+      <input type="checkbox" id="french"><label for="french">양식</label> <br>
+      <label for="">가입요청 메세지:</label> <br> <textarea name="" id="" cols="30" rows="10" placeholder="가입메세지를 입력해주세요."></textarea> <br>
+      <input type="submit" value="회원가입">
+      <input type="reset" value="다시입력">
+      <input type="button" value="버튼">
+    </form>
+  </fieldset>
+
+
+  <!-- media -->
+
+  
+
+</body>
+</html>

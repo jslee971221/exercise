@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index slide</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>div.artGroup{
+            width: 500%;
+            transition: all 0.8s;
+        }
+        div.artView>div.artGroup{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>div.artGroup>div.article{
+            width: calc(100% / 5);
+            float: left;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div.artView>div.artGroup>div.article:nth-child(1){
+            background-image: url('./images/sport-shoes-1470061_1920.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(2){
+            background-image: url('./images/bodybuilder-925770_1920.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(3){
+            background-image: url('./images/hands-g40e4bdfe9_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(4){
+            background-image: url('./images/staythumb.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(5){
+            background-image: url('./images/chest-2868408_1920.jpg');
+        }
+        div.artView>ul.paging{
+            width: 20%;
+            height: 20px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+        }
+        div.artView>ul.paging::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #fc0;
+            border-radius: 10px;
+            float: left;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        div.artView>ul.paging>li.show{
+            width: 40px;
+        }
+        
+    </style>
+    <script>
+        $(function(){
+            //인덱스를 활용한 슬라이드 이동
+            var i = 0;
+            $('.paging>li').click(function(){
+                $('.paging>li').removeClass('show');
+                $(this).addClass('show');
+
+                var ind = $(this).index();
+                i = ind;
+                $('.artGroup').css('marginLeft', -100 * ind + '%');
+            });    
+            // 끝
+            $('button').eq(0).click(function(){
+                i++;
+                if(i > 4){
+                    i = 4;
+                }
+                $('.artGroup').css('marginLeft', -100 * i +'%');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+            $('button').eq(1).click(function(){
+                i--;
+                if(i < 0){
+                    i = 0;
+                }
+                $('.artGroup').css('marginLeft', -100 * i +'%');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+        });
+    </script>
+</head> 
+<body>
+    <div class="artView">
+        <div class="artGroup">
+          <div class="article"></div>
+          <div class="article"></div>
+          <div class="article"></div>
+          <div class="article"></div>
+          <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

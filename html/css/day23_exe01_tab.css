@@ -1,0 +1,116 @@
+div.hdrWrap>div.header>ul.nav>li{
+  display: none;
+}
+div.hdrWrap>div.header>ul.nav>li:nth-last-child(1){
+  display: block;
+}
+
+div.hdrWrap>div.header{
+  width: 90%;
+  max-width: 700px;
+}
+div.mainWrap>div.main{
+  width: 90%;
+  max-width: 700px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+div.mainWrap>div.main>h1{
+  font-size: 36px;
+  line-height: 40px;
+}
+div.mainWrap>div.main>p{
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 80px;
+  width: calc(100% / 8 * 6);
+}
+
+div.cntWrap{
+  margin-top: 40px;
+}
+div.cntWrap>div.content{
+  width: 90%;
+  max-width: 700px;
+}
+
+div.cntWrap>div.content>div.header>h2{
+  font-size: 30px;
+  line-height: 80px;
+}
+div.cntWrap>div.content>div.header>p{
+  width: calc(100% / 8 * 4.5);
+}
+div.cntWrap>div.content>div.section{
+  margin-top: 40px;
+}
+
+div.cntWrap>div.content.cnt01>div.section>div.article{
+  width: calc(100% / 2 - 20px);
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts{
+  padding: 20px 0px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>h3{
+  text-align: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.texts>ul>li{
+  margin-left: 0px;
+}
+
+div.bnrWrap{
+  margin-top: 40px;
+}
+div.bnrWrap>div.banner{
+  width: 90%;
+  max-width: 700px;
+  padding: 40px 0px;
+}
+div.bnrWrap>div.banner>div.image:nth-child(4)~div.image{
+  display: none;
+}
+div.bnrWrap>div.banner>div.image{
+  width: calc(100% / 4 - 20px);
+}
+
+div.cntWrap>div.content.cnt02>div.section>div.artMid{
+  display: none;
+}
+div.cntWrap>div.content.cnt02>div.section>div{
+  width: calc(100% / 2 - 20px);
+}
+
+div.cntWrap>div.content.cnt02>div.section>div.artLeft>div.article>div.image{
+  border-radius: 50%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artLeft>div.article>div.texts>p{
+  font-size: 14px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artRight>div.article>div.image{
+  border-radius: 50%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artRight>div.article>div.texts>p{
+  font-size: 14px;
+}
+
+div.ftrWrap>div.footer{
+  width: 90%;
+  max-width: 700px;
+  padding: 40px 0px;
+}
+div.ftrWrap>div.footer>div.ftrLeft>h4{
+  display: none;
+}
+div.ftrWrap>div.footer>div.ftrRight{
+  display: none;
+}
+div.ftrWrap>div.footer>div.ftrLeft{
+  width: 100%;
+  float: none;
+  text-align: center;
+}
+div.ftrWrap>div.footer>div.ftrLeft>div.sns{
+  font-size: 30px;
+}

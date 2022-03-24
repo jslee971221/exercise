@@ -1,0 +1,85 @@
+div.cntWrap{
+  margin-top: 280px;
+}
+div.cntWrap>div.content{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{
+  text-align: center;
+}
+div.cntWrap>div.content>div.header>h2{
+  font-size: 25px;
+  line-height: 80px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 12px;
+}
+div.cntWrap>div.content>div.section{
+  margin-top: 40px;
+  outline: 1px solid blue;
+}
+div.cntWrap>div.content>div.section::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+div.cntWrap>div.content>div.section>div.article{
+  float: left;
+  width: calc(100% / 2 - 20px);
+  outline: 1px solid red;
+  margin: 0 10px;
+}
+
+div.cntWrap>div.content>div.section>div.article:nth-child(3){
+  margin-top: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+  width: 50%;
+  height: 240px;
+  background-color: #fc0;
+  float: left;
+  
+
+}
+div.cntWrap>div.content>div.section>div.article>div.texts{
+  width: 50%;
+  padding: 40px 20px;
+  float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>p{
+  font-size: 12px;
+  line-height: 20px;
+  height: 80px;
+  overflow: hidden;
+}
+
+div.bnrWrap{
+  margin-top: 280px;
+}
+div.bnrWrap>div.banner{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+div.bnrWrap>div.banner>h2{}
+div.bnrWrap>div.banner>h5{}
+div.bnrWrap>div.banner>p{}
+div.bnrWrap>div.banner>div.btn{}
