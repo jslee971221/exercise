@@ -1,0 +1,80 @@
+div.cntWrap{
+}
+/* 너비는 전체의 80%지만 최대 너비는 1080px. 상하 여백 0, 좌우에 자동으로 같은 값을 주어 가운데로 정렬 */
+div.cntWrap>div.content{
+  width: 80%;             
+  max-width: 1080px;
+  margin: 0 auto;
+}
+/* 텍스트 가운데 정렬 */
+div.cntWrap>div.content>div.header{
+  text-align: center;
+}
+/* 폰트 사이즈 25, 줄 높이 80px 굵게, 첫 글자 대문자*/
+div.cntWrap>div.content>div.header>h2{
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 80px;
+  text-transform: capitalize;
+}
+/* 폰트 사이즈 12px, 줄 높이 20px, 텍스트 박스 높이 40px 넘치는 텍스트는 숨김. 너비는 헤더의 절반*/
+div.cntWrap>div.content>div.header>p{
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 50%;
+  height: 40px;
+}
+/* 상단 여백 40px */
+div.cntWrap>div.content>div.section{
+  margin-top: 40px;
+}
+/* float 요소를 감싸고 있는 부모의 가상요소 생성. */
+div.cntWrap>div.content>div.section::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 한 줄에 2개를 넣을 것이기 때문에 전체 크기를 반으로 나누고 사이 간격 20px을 뺀 너비를 줌. flaot: left를 통해 아래로 놓여진 아티클들을 왼쪽으로 붙여 올림. */
+div.cntWrap>div.content>div.section>div.article{
+  width: calc(50% - 20px);
+  float: left;
+}
+/* 3번째 아티클에 상단 여백 40px를 줌 */
+div.cntWrap>div.content>div.section>div.article:nth-child(3){
+  margin-top: 40px;
+}
+/* 배경색은 노란색, 이미지의 너비는 아티클의 절반, 높이는 240px을 주고 왼쪽으로 붙힘. */
+div.cntWrap>div.content>div.section>div.article>div.image{
+  background-color: #fc0;
+  width: 50%;
+  height: 240px;
+  float: left;
+}
+/* 전체 텍스트 영역의 너비를 아티클의 절반, 높이를 맞추기위해 패딩 값을 상하 40, 좌우 20px를 줌. float: left로 float된 이미지의 왼쪽으로 붙힘 */
+div.cntWrap>div.content>div.section>div.article>div.texts{
+  width: 50%;
+  padding: 40px 20px;
+  float: left;
+}
+/* 사이즈 15px, 높이 40px, 굵게, 첫 글자는 대문자 */
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+/* 사이즈 12px, 높이 40px를 줌. 굵게 */
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{
+  font-size: 12px;
+  line-height: 40px;
+  font-weight: 700;
+}
+/* 사이즈 12px, 줄높이 20px, 텍스트 박스 높이 80px를 주어 4줄의 텍스트가 보여지고 넘치는 부분은 숨겨짐. */
+div.cntWrap>div.content>div.section>div.article>div.texts>p{
+  font-size: 12px;
+  line-height: 20px;
+  height: 80px;
+  overflow: hidden;
+}

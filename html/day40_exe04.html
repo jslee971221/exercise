@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            height: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>div.artGroup{
+            height: 1000px;
+            transition: all 0.8s;
+        }
+        div.artView>div.artGroup>div.article{
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div.artView>div.artGroup>div.article:nth-child(1){
+            background-image: url('./images/bodybuilder-925770_1920.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(2){
+            background-image: url('./images/butterthumb.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(3){
+            background-image: url('./images/crossfit-534615_1920.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(4){
+            background-image: url('./images/hands-g40e4bdfe9_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(5){
+            background-image: url('./images/sport-shoes-1470061_1920.jpg');
+        }
+        div.artView>ul.paging{
+            width: 40px;
+            height: 200px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #fc0;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        div.artView>ul.paging>li.show{
+            height: 40px;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            var i = 0;
+            $('.paging>li').click(function(){
+                var ind = $(this).index();
+                i = ind; 
+                $('.paging>li').removeClass('show');
+                $(this).addClass('show');
+                $('.artGroup').css('marginTop', -200 * i + 'px');
+            });
+            $('button').eq(0).click(function(){
+                i++;
+                if(i > 4){
+                    i = 4;
+                }
+                $('.artGroup').css('marginTop', -200 * i + 'px');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+            $('button').eq(1).click(function(){
+                i--;
+                if(i < 0){
+                    i = 0;
+                }
+                $('.artGroup').css('marginTop', -200 * i + 'px');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>Up</button>
+    <button>Down</button>
+</body>
+</html>
