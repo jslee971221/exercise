@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .btn>div, li{
     cursor: pointer;
@@ -283,3 +284,290 @@ div.q4ArtView>div.btn{
     left: 10px;
     font-size: 40px;
 }
+=======
+
+.btn>div, li{
+    cursor: pointer;
+}
+
+
+ul.arcodion{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+ul.arcodion>li{
+    text-align: center;
+    transition: all 0.5s;
+}
+ul.arcodion>li:nth-child(odd){
+    height: 40px;
+    background-color: #fc0;
+}
+ul.arcodion>li:nth-child(even){
+    height: 0px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+ul.arcodion>li.show{
+    height: 80px;
+}
+ul.arcodion>li>p{
+    margin-top: 30px;
+    line-height: 20px;
+    font-size: 15px;
+}
+/* 패딩을 주면 커져버려서 안됨... */
+
+div.q2ArtView{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.q2ArtView>div.artGroup{
+    width: 400%;
+    transition: all 0.5s;
+}
+div.q2ArtView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.q2ArtView>div.artGroup>div.article{
+    width: calc(100% / 12 - 20px);
+    height: 200px;
+    float: left;
+    margin: 0 10px;
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(1){
+    background-color: green;
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(2){
+    background-color: rgb(33, 38, 83);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(3){
+    background-color: rgb(61, 9, 63);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(4){
+    background-color: rgb(159, 177, 61);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(5){
+    background-color: rgb(102, 124, 124);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(6){
+    background-color: rgb(76, 187, 76);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(7){
+    background-color: rgb(224, 24, 67);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(8){
+    background-color: rgb(167, 20, 20);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(9){
+    background-color: rgb(219, 105, 39);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(10){
+    background-color: rgb(147, 245, 188);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(11){
+    background-color: rgb(125, 102, 255);
+}
+div.q2ArtView>div.artGroup>div.article:nth-child(12){
+    background-color: rgb(91, 176, 255);
+}
+
+div.q2ArtView>div.btn{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    font-size: 40px;
+}
+div.q2ArtView>div.btn>div.left{
+    float: left;
+    margin-left: 10px;
+}
+div.q2ArtView>div.btn>div.right{
+    float: right;
+    margin-right: 10px;
+}
+
+
+div.q3ArtView{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.q3ArtView>div.artGroup{
+    width: 500%;
+    transition: all 0.5s;
+}
+div.q3ArtView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.q3ArtView>div.artGroup>div.article{
+    width: calc(100% / 5);
+    height: 500px;
+    float: left;
+}
+div.q3ArtView>div.artGroup>div.article:nth-child(1){
+    background-color: green;
+}
+div.q3ArtView>div.artGroup>div.article:nth-child(2){
+    background-color: rgb(33, 38, 83);
+}
+div.q3ArtView>div.artGroup>div.article:nth-child(3){
+    background-color: rgb(61, 9, 63);
+}
+div.q3ArtView>div.artGroup>div.article:nth-child(4){
+    background-color: rgb(159, 177, 61);
+}
+div.q3ArtView>div.artGroup>div.article:nth-child(5){
+    background-color: rgb(102, 124, 124);
+}
+div.q3ArtView>div.btn{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    font-size: 40px;
+}
+div.q3ArtView>ul.paging{
+    width: 22%;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+}
+div.q3ArtView>ul.paging::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.q3ArtView>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #fc0;
+    float: left;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+div.q3ArtView>ul.paging>li.show{
+    width: 40px;
+}
+div.q3ArtView>div.btn>div.left{
+    float: left;
+    margin-left: 10px;
+}
+div.q3ArtView>div.btn>div.right{
+    float: right;
+    margin-right: 10px;
+}
+
+div.q4ArtView{
+    width: 80%;
+    max-width: 1080px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.q4ArtView::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.q4ArtView>div.artGroup{
+    width: calc(100% / 3 - 20px);
+    margin: 0 10px;
+    height: 800px;
+    transition: all 0.5s;
+    float: left;
+}
+div.q4ArtView>div.artGroup>div.article{
+    height: 200px;
+}
+div.q4ArtView>div.artGroup.left>div.article:nth-child(1){
+    background-color: green;
+}
+div.q4ArtView>div.artGroup.left>div.article:nth-child(2){
+    background-color: rgb(33, 38, 83);
+}
+div.q4ArtView>div.artGroup.left>div.article:nth-child(3){
+    background-color: rgb(61, 9, 63);
+}
+div.q4ArtView>div.artGroup.left>div.article:nth-child(4){
+    background-color: rgb(159, 177, 61);
+}
+div.q4ArtView>div.artGroup.mid>div.article:nth-child(1){
+    background-color: rgb(102, 124, 124);
+}
+div.q4ArtView>div.artGroup.mid>div.article:nth-child(2){
+    background-color: rgb(76, 187, 76);
+}
+div.q4ArtView>div.artGroup.mid>div.article:nth-child(3){
+    background-color: rgb(224, 24, 67);
+}
+div.q4ArtView>div.artGroup.mid>div.article:nth-child(4){
+    background-color: rgb(167, 20, 20);
+}
+div.q4ArtView>div.artGroup.right>div.article:nth-child(1){
+    background-color: rgb(219, 105, 39);
+}
+div.q4ArtView>div.artGroup.right>div.article:nth-child(2){
+    background-color: rgb(147, 245, 188);
+}
+div.q4ArtView>div.artGroup.right>div.article:nth-child(3){
+    background-color: rgb(125, 102, 255);
+}
+div.q4ArtView>div.artGroup.right>div.article:nth-child(4){
+    background-color: rgb(91, 176, 255);
+}
+
+
+div.q4ArtView>ul.paging{
+    height: 150px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0px;
+    right: 10px;
+}
+div.q4ArtView>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #fc0;
+    margin-top: 10px;
+    transition: all 0.5s;
+}
+div.q4ArtView>ul.paging>li.show{
+    height: 40px;
+}
+div.q4ArtView>div.btn{
+    height: 80px;
+    line-height: 60px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    font-size: 40px;
+}
+>>>>>>> a9386bd991bffe6883888ae390cbef6dcea29f99
