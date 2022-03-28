@@ -1,0 +1,140 @@
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{
+    margin-top: 160px;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 36px;
+    line-height: 80px;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: center;
+}
+div.cntWrap>div.content>div.header>p{
+    width: calc(100% / 12 * 8);
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    margin: 0 auto;
+    color: #333;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1){
+    width: calc(100% / 12 * 8 - 20px);
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article{
+    width: calc(100% / 4 - 15px);
+    margin-top: 20px;
+    float: left;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article:nth-child(2)~div.article{
+    margin-left: 20px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1) div.image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.artView>div.image{
+    height: 280px;
+    background-image: url(../images/pic02.jpg);
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article>div.image.i1{
+    background-image: url(../images/pic02.jpg);
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article>div.image.i2{
+    background-image: url(../images/pic03.jpg);
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article>div.image.i3{
+    background-image: url(../images/pic01.jpg);
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article>div.image.i4{
+    background-image: url(../images/monkey-gb81789f02_1920.jpg);
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(1)>div.article>div.image{
+    height: 80px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2){
+    width: calc(100% / 12 * 4);
+    float: left;
+    margin-left: 20px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>h3{
+    font-size: 24px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-weight: 700px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li{
+    transition: all 0.5s;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-child(odd){
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 700;
+    line-height: 40px;
+    cursor: pointer;
+    border-top: 1px solid #333;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-child(even){
+   height: 0px;
+   overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-child(even)>p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    height: 100px;
+    overflow: hidden;
+    padding-left: 20px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li.show+li{
+    height: 120px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>div.btns>div.btns::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>div.btns>div.btn{
+    width: calc(100% / 2 - 10px);
+    border: 2px solid orange;
+    border-radius: 20px;
+    line-height: 40px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>div.btns>div.btn:nth-child(1){
+    margin-right: 10px;
+}
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>div.btns>div.btn:nth-child(2){
+    margin-left: 10px;
+}
