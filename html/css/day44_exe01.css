@@ -99,6 +99,9 @@ div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-ch
     cursor: pointer;
     border-top: 1px solid #333;
 }
+div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-last-child(1){
+    border-bottom: 1px solid #333;
+}
 div.cntWrap>div.content>div.section>div.artGroup:nth-child(2)>ul.texts>li:nth-child(even){
    height: 0px;
    overflow: hidden;

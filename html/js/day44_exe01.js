@@ -8,8 +8,6 @@ $(function(){ //시작
         viewImg.css('backgroundImage', $(this).css('backgroundImage'));
     });
 
-    $('.show i').removeClass('xi-plus-min');
-    $('.show i').addClass('xi-minus-min');
     title.click(function(){
         title.removeClass('show');
         $(this).addClass('show');

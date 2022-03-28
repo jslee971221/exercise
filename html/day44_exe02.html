@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>답안</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.header{
+            text-align: center;
+        }
+        div.cntWrap>div.content>div.header>h2{
+            font-size: 36px;
+            line-height: 80px;
+            text-transform: capitalize;
+        }
+        div.cntWrap>div.content>div.header>p{
+            width: calc(100% / 12 * 8);
+            font-size: 14px;
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.section{
+            margin-top: 80px;
+        }
+        div.cntWrap>div.content>div.section>div.article::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image{
+            width: calc(100% / 12 * 8 - 20px);
+            margin: 0 10px;
+            float: left;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>div.thumbView{
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('images/pic01.jpg');
+            transition: background-image, 0.5s;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb{
+            margin-top: 20px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li{
+            width: calc(100% / 4 - 20px);
+            height: 80px;
+            margin: 0 10px;
+            float: left;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li:nth-child(1){
+            width: calc(100% / 4 - 10px);
+            margin-left: 0px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li:nth-last-child(1){
+            width: calc(100% / 4 - 10px);
+            margin-right: 0px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i1{
+            background-image: url('images/pic01.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i2{
+            background-image: url('images/pic02.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i3{
+            background-image: url('images/pic03.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i4{
+            background-image: url('images/monkey-gb81789f02_1920.jpg');
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts{
+            width: calc(100% / 12 * 4 - 20px);
+            margin: 0 10px;
+            float: left;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+            line-height: 40px;
+            font-size: 24px;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd){
+            line-height: 40px;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-top: 1px solid black;
+            cursor: pointer;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even){
+            height: 0px;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li.show+li{
+            height: 120px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even)>p{
+            margin-left: 20px;
+            height: 100px;
+            line-height: 20px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>div.btns::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>div.btns{
+            border-top: 1px solid black;
+            padding-top: 14px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>div.btns>div.btn{
+            width: calc(50% - 10px);
+            line-height: 40px;
+            font-size: 14px;
+            border: 1px solid orange;
+            text-transform: uppercase;
+            text-align: center;
+            float: left;
+            border-radius: 20px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>div.btns>div.btn:nth-child(2){
+            margin-left: 20px;
+        }
+    </style>
+    <script>
+        $(function(){//
+            var thumbImg = $('.thumb li');
+            var thumbView = $('.thumbView');
+            var acoLi = $('.aco li');
+            var btn = $('.btns .btn')
+            thumbImg.click(function(){
+                var img = $(this).css('backgroundImage');
+                thumbView.css('backgroundImage', img);
+            });
+            acoLi.even().click(function(){
+                acoLi.removeClass('show');
+                $(this).addClass('show');
+                acoLi.even().find('span').eq(0).text('+');
+                $(this).find('span').eq(0).text('-');
+                //find는 하위의 모든 요소 
+            });
+            btn.eq(0).click(function(){
+                acoLi.even().find('span:eq(1)').text('description');
+            });
+            btn.eq(1).click(function(){
+                acoLi.even().find('span:eq(1)').text('view');
+            });
+        });//
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="header">
+                <h2>content title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur nobis perspiciatis eligendi tenetur tempora quo! Provident, a vitae. Non cupiditate beatae ut, quasi excepturi animi voluptatem quis odio harum?</p>
+            </div>
+            <div class="section">
+                <!-- 문서의 일관성위해 아티클 하나에 이미지 텍스트로 구분 -->
+                <div class="article">
+                    <div class="image">
+                        <div class="thumbView"></div>
+                        <ul class="thumb">
+                            <li class="image i1"></li>
+                            <li class="image i2"></li>
+                            <li class="image i3"></li>
+                            <li class="image i4"></li>
+                        </ul>
+                    </div>
+                    <div class="texts">
+                        <h3>segment title</h3>
+                        <ul class="aco">
+                            <li class="show"><span>-</span><span>description</span></li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem et possimus illo perferendis laborum dolore voluptas molestiae, doloribus rerum adipisci deserunt consectetur animi. Non doloremque a nisi vitae dolorum. Placeat.</p>
+                            </li>
+                            <li><span>+</span><span>description</span></li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem et possimus illo perferendis laborum dolore voluptas molestiae, doloribus rerum adipisci deserunt consectetur animi. Non doloremque a nisi vitae dolorum. Placeat.</p>
+                            </li>
+                            <li><span>+</span><span>description</span></li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem et possimus illo perferendis laborum dolore voluptas molestiae, doloribus rerum adipisci deserunt consectetur animi. Non doloremque a nisi vitae dolorum. Placeat.</p>
+                            </li>
+                            <li><span>+</span><span>description</span></li>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem et possimus illo perferendis laborum dolore voluptas molestiae, doloribus rerum adipisci deserunt consectetur animi. Non doloremque a nisi vitae dolorum. Placeat.</p>
+                            </li>
+                            <!-- xeicon 사용 시 충돌이 일어나는 경우도 있음. -->
+                        </ul>
+                        <div class="btns">
+                            <div class="btn">description</div>
+                            <div class="btn">view</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
