@@ -157,8 +157,8 @@
             acoLi.even().click(function(){
                 acoLi.removeClass('show');
                 $(this).addClass('show');
-                acoLi.even().find('span').eq(0).text('+');
-                $(this).find('span').eq(0).text('-');
+                acoLi.even().find('span:eq(0)').text('+');
+                $(this).find('span:eq(0)').text('-');
                 //find는 하위의 모든 요소 
             });
             btn.eq(0).click(function(){
