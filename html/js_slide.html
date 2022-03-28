@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.artView{
+            width: 100%;
+            overflow: hidden;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup{
+            width: 500%;
+            transition: all 0.5s;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article{
+            height: 200px;
+            width: calc(100% / 5);
+            float: left;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article:nth-child(1){
+            background-color: #fc0;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article:nth-child(2){
+            background-color: red;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article:nth-child(3){
+            background-color: blue;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article:nth-child(4){
+            background-color: green;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article:nth-child(5){
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="artView">
+                <div class="artGroup">
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                </div>
+            </div>
+            <button>left</button><button>right</button>
+        </div>
+    </div>
+    <script>
+        var artGroup = document.querySelector('.content .artGroup');
+        var btn = document.querySelectorAll('.content button');
+        var i = 0;
+        btn[0].onclick = function(){
+            i++;
+            if(i >= 4){
+                i = 4;
+            }
+            artGroup.style.marginLeft = i * -100 + '%';
+        }
+        btn[1].onclick = function(){
+            i--;
+            if(i <= 0){
+                i = 0;
+            }
+            artGroup.style.marginLeft = i * -100 + '%';
+        }
+        
+    </script>
+</body>
+</html>    
