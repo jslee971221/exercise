@@ -162,10 +162,10 @@
                 //find는 하위의 모든 요소 
             });
             btn.eq(0).click(function(){
-                acoLi.even().find('span:eq(1)').text('description');
+                acoLi.even().find('span:eq(1)').text($(this).text());
             });
             btn.eq(1).click(function(){
-                acoLi.even().find('span:eq(1)').text('view');
+                acoLi.even().find('span:eq(1)').text($(this).text());
             });
         });//
     </script>
