@@ -120,7 +120,7 @@
             border-top: 1px solid #333;
             line-height: 39px;
             font-size: 18px;
-            font: 2700px;
+            font: 27px;
             cursor: pointer;
         }        
         div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even){
@@ -168,31 +168,22 @@
             var btn = $('.images .btns i');
             var count = $('.images .count');
             var acoTitle = $('.aco li').even();
-            var limit = function(i, list){
-                if(i >= list.length){
-                    return list.length - 1;
-                }else if(i <= 0){
-                    return 0;
-                }else{
-                    return i;
-                }
-            }
+            var artLen = imgList.length;
             var slide = function(i, imgGroup, count){
                 imgGroup.css('marginLeft', -100 * i + '%');
                 count.find('span:first').text(i + 1);
             };
 
-            count.find('span:last').text(imgList.length);
-            btn.eq(0).click(function(){
+            count.find('span:last').text(artLen);
+            btn.eq(1).click(function(){
                 i++;
-                i = limit(i, imgList);
+                i = i % artLen; // 나머지는 0 ~ 5
                 slide(i, imgGroup, count);
             });
-            btn.eq(1).click(function(){
+            btn.eq(0).click(function(){
                 i--;
-                i = limit(i, imgList);
+                i = (i + artLen) % artLen;
                 slide(i, imgGroup, count);
-                
             });
             acoTitle.click(function(){
                 acoTitle.removeClass('show');
@@ -220,7 +211,7 @@
                             <div class="image i6"></div>
                         </div>
                         <div class="count">
-                            <span>1</span>/<span>6</span>
+                            <span>1</span>/<span></span>
                         </div>
                         <div class="btns">
                             <i class="xi-angle-left"></i>
