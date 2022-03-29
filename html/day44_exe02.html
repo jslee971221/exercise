@@ -159,7 +159,10 @@
                 $(this).addClass('show');
                 acoLi.even().find('span:eq(0)').text('+');
                 $(this).find('span:eq(0)').text('-');
-                //find는 하위의 모든 요소 eq 함수를 사용하면 함수끼리 충돌하여 acoLi의 eq(index)의 span을 선택한다. (자바스크립트는 더 빠른 것부터 처리한다.) :eq(index)의 형태로 사용하는 것이 좋다.
+                //li 5개, span 2개 해서 총 10개의 값을 가진 배열 형태로 저장됨 여기서 eq()를 사용하면 배열 중의 몇번째만 가져오게 됨 
+                //:eq(index)의 형태로 사용하는 것이 좋다. 이렇게 사용할 경우 li 들의 n번째 span을 전부 가져옴. 
+                //(자바스크립트는 더 빠른 것부터 처리한다.) 
+                
             });
             btn.eq(0).click(function(){
                 acoLi.even().find('span:eq(1)').text($(this).text());
