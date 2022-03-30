@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn, fadeOut, append, prepend</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.artGroup{
+            height: 280px;
+            width: 1000px;
+        }
+        div.artGroup>div.article{
+            width: 200px;
+            height: 280px;
+            float: left;
+            font-size: 80px;
+        }
+        div.artGroup>div.article.a1{
+            background-color: red;
+        }
+        div.artGroup>div.article.a2{
+            background-color: orange;
+        }
+        div.artGroup>div.article.a3{
+            background-color: yellow;
+        }
+        div.artGroup>div.article.a4{
+            background-color: green;
+        }
+        div.artGroup>div.article.a5{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(function(){
+            var btn = $('button');
+            btn.first().click(function(){
+                //article.first().fadeIn(500);
+                $('.article:first').appendTo('.artGroup'); // 뭘 보낼지를 정하고 어디에 보낼지를 나중에 정함. appendTo()
+            });
+            btn.last().click(function(){
+                //article.first().fadeOut(500); //밀리세컨드 단위임
+                //article.eq(2).fadeOut(1000);
+                $('.article:Last').prependTo('.artGroup');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artGroup">
+        <div class="article a1">1</div>
+        <div class="article a2">2</div>
+        <div class="article a3">3</div>
+        <div class="article a4">4</div>
+        <div class="article a5">5</div>
+    </div>
+    <button>append</button>
+    <button>prepend</button>
+</body>
+</html>
