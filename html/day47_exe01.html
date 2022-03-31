@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>div.artGroup{
+            width: 300%;
+            height: 500px;
+        }
+        div.artView>div.artGroup>div.article{
+            width: calc(100% / 3);
+            height: 500px;
+            float: left;
+            font-size: 72px;
+        }
+        div.artView>div.artGroup>div.article.i1{
+            background-color: red;
+        }
+        div.artView>div.artGroup>div.article.i2{
+            background-color: orange;
+        }
+        div.artView>div.artGroup>div.article.i3{
+            background-color: yellow;
+        }
+        div.artView>div.artGroup>div.article.i4{
+            background-color: green;
+        }
+        div.artView>div.artGroup>div.article.i5{
+            background-color: blue;
+        }
+        div.artView>div.artGroup>div.article.i6{
+            background-color: rgb(89, 0, 255);
+        }
+        div.artView>div.btns{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }  
+        </style>
+    <script>
+        $(function(){
+            var btn = $('.btns button');
+            var artGroup = $('.artGroup');
+            //기초 세팅
+            artGroup.find('.article:last').prependTo(artGroup);
+            artGroup.css({
+                marginLeft : '-100%'
+            });
+            btn.first().click(function(){
+                artGroup.stop().animate({
+                    marginLeft : '0%'
+                }, 500, function(){
+                    artGroup.find('.article:last').prependTo(artGroup);
+                    artGroup.css({
+                        marginLeft : '-100%'
+                    });
+                });
+            });
+            btn.last().click(function(){
+                artGroup.stop().animate({
+                    marginLeft : '-200%'
+                }, 500, function(){
+                    artGroup.find('.article:first').appendTo(artGroup);
+                    artGroup.css({
+                        marginLeft : '-100%'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article i1">1</div>
+            <div class="article i2">2</div>
+            <div class="article i3">3</div>
+        </div>
+        <div class="btns">
+            <button> < </button>
+            <button> > </button>
+        </div>
+    </div>
+</body>
+</html>
