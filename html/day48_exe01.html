@@ -89,20 +89,23 @@
             var pBtn = $('.paging li');
             var i = 0;
             var artLen = artGroup.find('.article').length;
+            var events = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+            //트랜지션 이벤트 (트랜지션 종료 시점)
             // var count = true;
-            function slide(artGroup, pBtn, i, btn){
+            var onOff = false;
+            function slide(artGroup, pBtn, i /*btn*/){
                 artGroup.find('.article').removeClass('show');
                 artGroup.find('.article:eq(' + i + ')').addClass('show');
                 pBtn.removeClass('show');
                 pBtn.eq(i).addClass('show')
-                btn.attr('disabled', true);
-                setTimeout(function(){btn.attr('disabled', false);}, 500); 
+                // btn.attr('disabled', true);
+                // setTimeout(function(){btn.attr('disabled', false);}, 500); 
             }
             // function resetCount(count, btn){
             //     setTimeout(function(){btn.attr('disabled', false);}, 500);
             //     return 0;
             // }
-
+           
             btn.first().click(function(){
             //     if(j){
             //         i--;
@@ -112,29 +115,40 @@
             //     }else{
             //         j = !j;
             //     }
-                // count++;
-                // console.log(count);
-                // if(count == 1){
-                //     i--;
-                //     i = (i + artLen) % artLen;
-                //     slide(artGroup, pBtn, i);
-                //     btn.attr('disabled', true);
-                //     count = resetCount(count, btn);
-                //     console.log(count);
-                // }
-                i--;
-                i = (i + artLen) % artLen;
-                slide(artGroup, pBtn, i, btn);
+                // i--;
+                // i = (i + artLen) % artLen;
+                // slide(artGroup, pBtn, i, btn);
+                if(!onOff){
+                    i--;
+                    i = (i + artLen) % artLen;
+                    onOff = true;
+                }else{
+                    artGroup.find('.article').on(events, function(){
+                        onOff = false;
+                    });
+                }
+                slide(artGroup, pBtn, i);
             });
+            
+
+            
             btn.last().click(function(){
-                    i++;
-                    i = i % artLen;
-                    slide(artGroup, pBtn, i, btn);
+                    if(!onOff){
+                        i++;
+                        i = i % artLen;
+                        onOff = true;  
+                    }else{
+                        artGroup.find('.article').on(events, function(){
+                        onOff = false;
+                        });
+                    }
+                    
+                    slide(artGroup, pBtn, i);
                 
             });
             pBtn.click(function(){
                 i = $(this).index();
-                slide(artGroup, pBtn, i, btn);
+                slide(artGroup, pBtn, i);
             });
         });
     </script>
