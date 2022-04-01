@@ -105,7 +105,9 @@
             //     setTimeout(function(){btn.attr('disabled', false);}, 500);
             //     return 0;
             // }
-           
+            artGroup.find('.article').on(events, function(){
+                    onOff = false;
+            });
             btn.first().click(function(){
             //     if(j){
             //         i--;
@@ -122,10 +124,6 @@
                     i--;
                     i = (i + artLen) % artLen;
                     onOff = true;
-                }else{
-                    artGroup.find('.article').on(events, function(){
-                        onOff = false;
-                    });
                 }
                 slide(artGroup, pBtn, i);
             });
@@ -137,14 +135,8 @@
                         i++;
                         i = i % artLen;
                         onOff = true;  
-                    }else{
-                        artGroup.find('.article').on(events, function(){
-                        onOff = false;
-                        });
                     }
-                    
-                    slide(artGroup, pBtn, i);
-                
+                    slide(artGroup, pBtn, i);  
             });
             pBtn.click(function(){
                 i = $(this).index();
