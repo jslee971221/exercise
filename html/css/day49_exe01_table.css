@@ -1,0 +1,25 @@
+div.artView{
+    width: 90%;
+    max-width: 700px;
+}
+div.artView>div.artGroup{
+    width: 300%;
+    height: 300px;
+}
+div.artView>div.artGroup>div.article{
+    height: 300px;
+}
+div.artView>ul.paging{
+    bottom: 0;
+}
+div.artView>ul.paging>li{
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+}
+/* div.artView>ul.paging>li:nth-child(3)~li{
+    display: none;
+} */
+div.artView>ul.paging>li.show{
+    width: 35px;
+}

@@ -1,0 +1,71 @@
+div.artView{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+div.artView>div.artGroup{
+    width: 600%;
+    height: 500px;
+    transition: margin-left 0.5s;
+}
+div.artView>div.artGroup>div.article{
+    width: calc(100% / 6);
+    height: 500px;
+    float: left;
+    font-size: 72px;
+}
+div.artView>div.artGroup>div.article:nth-child(1){
+    background-color: #fc0;
+}
+div.artView>div.artGroup>div.article:nth-child(2){
+    background-color: rgb(61, 151, 147);
+}
+div.artView>div.artGroup>div.article:nth-child(3){
+    background-color: rgb(14, 158, 79);
+}
+div.artView>div.artGroup>div.article:nth-child(4){
+    background-color: rgb(37, 11, 97);
+}
+div.artView>div.artGroup>div.article:nth-child(5){
+    background-color: rgb(204, 13, 13);
+}
+div.artView>div.artGroup>div.article:nth-child(6){
+    background-color: rgb(207, 108, 26);
+}
+div.artView>ul.paging{
+    height: 40px;
+    width: 20%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+div.artView>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #333;
+    transition: width 0.5s;
+}
+div.artView>ul.paging>li.show{
+    width: 40px;
+}
+div.artView>div.btns{
+    width: 100%;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+div.artView>div.btns>button{
+    height: 40px;
+}

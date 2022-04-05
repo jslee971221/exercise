@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto slide</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div.cntWrap{
+            margin-top: 120px;
+        }
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.article{
+            position: relative;
+            height: 480px;
+        }
+        div.cntWrap>div.content>div.article>div.imgView{
+            width: calc(100% / 12 * 7 - 20px);
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup{
+            width: 500%;
+            height: 480px;
+            transition: all 0.5s;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image{
+            width: calc(100% / 5);
+            height: 480px;
+            float: left;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image.i1{
+            background-color: red;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image.i2{
+            background-color: orange;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image.i3{
+            background-color: yellow;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image.i4{
+            background-color: green;
+        }
+        div.cntWrap>div.content>div.article>div.imgView>div.imgGroup>div.image.i5{
+            background-color: blue;
+        }
+        div.cntWrap>div.content>div.article>div.txtView{
+            width: calc(100% / 12 * 8 - 20px);
+            overflow: hidden;
+            position: absolute;
+            top: 40px;
+            right: 0;
+        }
+        div.cntWrap>div.content>div.article>div.txtView>div.txtGroup{
+            width: 500%;
+            height: 400px;
+            transition: all 0.5s;
+        }
+        div.cntWrap>div.content>div.article>div.txtView>div.txtGroup>div.texts{
+            width: calc(100% / 5);
+            float: left;
+            background-color: #000;
+            color: #fff;
+            padding: 40px calc(20% / 8 * 1.8) 60px calc(20% / 8);
+        }
+        div.cntWrap>div.content>div.article>div.txtView>div.txtGroup>div.texts>h2{
+            line-height: 80px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        div.cntWrap>div.content>div.article>div.txtView>div.txtGroup>div.texts>p{
+            font-size: 18px;
+            line-height: 20px;
+            height: 120px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        div.cntWrap>div.content>div.article>div.txtView>div.txtGroup>div.texts>div.btn{
+            background-color: #fff;
+            font-size: 18px;
+            color: #000;
+            width: calc(100% / 8 * 1.5);
+            border-radius: 20px;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 40px;
+        }
+        div.cntWrap>div.content>div.article>div.menu{
+            width: calc(100% / 12 * 5);
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+        }
+        div.cntWrap>div.content>div.article>div.menu>ul.paging{
+            width: calc(100% / 5 * 1.3);
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            float: left;
+        }
+        div.cntWrap>div.content>div.article>div.menu>ul.paging>li{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #666;
+            transition: all 0.5s;
+        }
+        div.cntWrap>div.content>div.article>div.menu>ul.paging>li.show{
+            background-color: red;
+        }
+        div.cntWrap>div.content>div.article>div.menu>div.btns{
+            float: right;
+            font-size: 20px;
+            line-height: 20px;
+        }
+    </style>
+    <script>
+        $(function(){
+            var btn = $('.menu .btns i');
+            var imgGroup = $('.imgGroup');
+            var txtGroup = $('.txtGroup');
+            var pBtn = $('.paging li');
+            var len = $('.imgGroup .image').length;
+            var i = 0;
+            var flag = true;
+            function rightSlide(){
+                i++;
+                i = i % len;
+                imgGroup.css({marginLeft : i * -100 + '%'});
+                txtGroup.css({marginLeft : i * -100 + '%'});
+                pBtn.removeClass('show');
+                pBtn.eq(i).addClass('show');
+            }
+            function leftSlide(){
+                i--;
+                i = (i + len) % len;
+                imgGroup.css({marginLeft : i * -100 + '%'});
+                txtGroup.css({marginLeft : i * -100 + '%'});
+                pBtn.removeClass('show');
+                pBtn.eq(i).addClass('show');
+            }
+            btn.eq(1).click(leftSlide);
+            btn.last().click(rightSlide);
+
+            var auto = setInterval(rightSlide, 1000);
+            btn.first().click(function(){
+                    if(flag){
+                        clearInterval(auto);
+                        btn.first().removeClass('xi-pause');
+                        btn.first().addClass('xi-play');
+                        flag = false;
+                    }else{
+                        btn.first().removeClass('xi-play');
+                        btn.first().addClass('xi-pause');
+                        auto = setInterval(rightSlide, 1000);
+                        flag = true;
+                    }
+                    
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="article">
+                <div class="imgView">
+                    <div class="imgGroup">
+                        <div class="image i1"></div>
+                        <div class="image i2"></div>
+                        <div class="image i3"></div>
+                        <div class="image i4"></div>
+                        <div class="image i5"></div>
+                    </div>
+                </div>
+                <div class="txtView">
+                    <div class="txtGroup">
+                        <div class="texts">
+                            <h2>Content title1</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, maxime saepe repellat praesentium tempore debitis mollitia expedita quidem aliquam nostrum. Dolore dignissimos nesciunt quibusdam odit ullam error veniam recusandae maiores?</p>
+                            <div class="btn">BUTTON</div>
+                        </div>
+                        <div class="texts">
+                            <h2>Content title2</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, maxime saepe repellat praesentium tempore debitis mollitia expedita quidem aliquam nostrum. Dolore dignissimos nesciunt quibusdam odit ullam error veniam recusandae maiores?</p>
+                            <div class="btn">BUTTON</div>
+                        </div>
+                        <div class="texts">
+                            <h2>Content title3</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, maxime saepe repellat praesentium tempore debitis mollitia expedita quidem aliquam nostrum. Dolore dignissimos nesciunt quibusdam odit ullam error veniam recusandae maiores?</p>
+                            <div class="btn">BUTTON</div>
+                        </div>
+                        <div class="texts">
+                            <h2>Content title4</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, maxime saepe repellat praesentium tempore debitis mollitia expedita quidem aliquam nostrum. Dolore dignissimos nesciunt quibusdam odit ullam error veniam recusandae maiores?</p>
+                            <div class="btn">BUTTON</div>
+                        </div>
+                        <div class="texts">
+                            <h2>Content title5</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, maxime saepe repellat praesentium tempore debitis mollitia expedita quidem aliquam nostrum. Dolore dignissimos nesciunt quibusdam odit ullam error veniam recusandae maiores?</p>
+                            <div class="btn">BUTTON</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul class="paging">
+                        <li class="show"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="btns">
+                        <i class="xi-pause"></i>
+                        <i class="xi-angle-left"></i>
+                        <i class="xi-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

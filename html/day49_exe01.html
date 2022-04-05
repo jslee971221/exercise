@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day49_exe01.css">
+    <link rel="stylesheet" href="./css/day49_exe01_table.css" media="(max-width:1024px) and (min-width:0px)">
+    <link rel="stylesheet" href="./css/day49_exe01_mobile.css" media="(max-width:420px) and (min-width:0px)">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function(){
+            var btns= $('.btns button');
+            var artGroup = $('.artGroup');
+            var pBtn = $('.paging li');
+            var artLen = artGroup.find('.article').length;
+            var artView = $('.artView');
+            var wd = $(window).width();
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            function slide(){
+                artGroup.css({marginLeft : k * i + '%'});
+                pBtn.removeClass('show');
+                pBtn.eq(i).addClass('show');
+            }
+            function leftSlide(){
+                i--;
+                if(i < 0){
+                    i = 0;
+                }
+                slide();
+            }
+            function rightSlide(){
+                i++;
+                i = i % artLen;
+                if(i >= j){
+                    i = j - 1;
+                }
+                slide();
+            }
+            function paging(){
+                i = $(this).index();
+                slide();
+            }
+
+
+            if(wd > 1024){
+                j = artLen;
+                k = -100;
+            }else if(wd > 420 && wd <= 1024){
+                j = 5;
+                k = -50;
+            }else{
+                j = artLen;
+                k = -100;
+            }
+            pBtn.click(paging);
+            btns.first().click(leftSlide);
+            btns.last().click(rightSlide);
+
+            var auto = setInterval(rightSlide, 500);
+            btns.first().click(function(){
+                clearInterval(auto);
+            });
+                //내 답안
+            // if(artView.css('max-width') == '700px'){
+            //     btns.first().click(function(){
+            //     i--;
+            //     if(i < 0){
+            //         i = 0;
+            //     }
+            //     artGroup.css({marginLeft : -100 * i + '%'});
+            //     pBtn.removeClass('show');
+            //     pBtn.eq(i).addClass('show');
+            //     });
+            //     btns.last().click(function(){
+            //     i++;
+            //     if(i >= 3){
+            //         i = 2;
+            //     }
+            //     artGroup.css({marginLeft : -100 * i + '%'});
+            //     pBtn.removeClass('show');
+            //     pBtn.eq(i).addClass('show');
+            //     });
+            // }else{
+                // btns.first().click(function(){
+                //     i--;
+                //     if(i < 0){
+                //         i = 0;
+                //     }
+                //     artGroup.css({marginLeft : -100 * i + '%'});
+                //     pBtn.removeClass('show');
+                //     pBtn.eq(i).addClass('show');
+                // });
+                // btns.last().click(function(){
+                //     i++;
+                //     if(i >= artLen){
+                //         i = artLen - 1;
+                //     }
+                //     artGroup.css({marginLeft : -100 * i + '%'});
+                //     pBtn.removeClass('show');
+                //     pBtn.eq(i).addClass('show');
+                // });
+            //}
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article">1</div>
+            <div class="article">2</div>
+            <div class="article">3</div>
+            <div class="article">4</div>
+            <div class="article">5</div>
+            <div class="article">6</div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="btns">
+            <button><</button>
+            <button>></button>
+        </div>
+    </div>
+</body>
+</html>
