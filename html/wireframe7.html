@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/wireframe7.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var artGroup = $('.cnt01 .artGroup');
+            var btn = $('.cnt01 .btns i');
+            $(window).scroll(function(){
+                var now = $(this).scrollTop();
+                if(now > 0){
+                    $('.hdrWrap').addClass('fix');
+                }else{
+                    $('.hdrWrap').removeClass('fix');
+                }
+            });
+
+            artGroup.css({
+                marginLeft : '-16.66%'
+            });
+            artGroup.find('.article:last').prependTo(artGroup);            
+            btn.first().click(function(){
+                artGroup.animate({
+                    marginLeft: '0%'
+                },500,function(){
+                    artGroup.css({
+                        marginLeft : '-16.66%'
+                    });
+                    artGroup.find('.article:last').prependTo(artGroup);   
+                });
+            });
+            btn.last().click(function(){
+                artGroup.animate({
+                    marginLeft: '-33.33%'
+                },500,function(){
+                    artGroup.css({
+                        marginLeft : '-16.66%'
+                    });
+                    artGroup.find('.article:first').appendTo(artGroup);   
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="hdrWrap">
+        <div class="header">
+            <h1>logo</h1>
+            <ul class="nav">
+                <li>sub01</li>
+                <li>sub02</li>
+                <li>sub03</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mainWrap">
+        <div class="main">
+
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt01">
+            <div class="header">
+                <h2>content title</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt nobis, voluptas consectetur porro eius eos facilis et eaque architecto consequuntur illum soluta perferendis molestias in expedita ullam odit obcaecati.</p>
+            </div>
+            <div class="section">
+                <div class="artView">
+                    <div class="artGroup">
+                        <div class="article">
+                            <div class="image i1"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i2"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i3"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i4"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i5"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i6"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i7"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image i8"></div>
+                        </div>
+
+                    </div>
+                    <div class="btns">
+                        <i class="xi-angle-left"></i>
+                        <i class="xi-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cntWrap">
+        <div class="content cnt02">
+            <div class="header">
+                <h2>content title</h2>
+            </div>
+            <div class="section">
+                <div class="article">
+                    <div class="image i1"></div>
+                    <div class="texts">
+                        <h3>자세히보기</h3>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="image i2"></div>
+                    <div class="texts">
+                        <h3>자세히보기</h3>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="image i3"></div>
+                    <div class="texts">
+                        <h3>자세히보기</h3>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="image i4"></div>
+                    <div class="texts">
+                        <h3>자세히보기</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt03">
+            <div class="header">
+                <h2>content title</h2>
+            </div>
+            <div class="section">
+                <div class="article">
+                    <div class="image i1"></div>
+                    <div class="texts">
+                        <h3>segment title</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sunt voluptatem tempora harum provident quia culpa, quidem eos qui quibusdam impedit similique autem, aperiam doloremque. Harum, laboriosam! Libero, voluptatem beatae! impedit similique autem, aperiam doloremque. Harum, laboriosam! Libero, voluptatem beatae!
+                        </p>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="image i2"></div>
+                </div>
+                <div class="article">
+                    <div class="image i3"></div>
+                </div>
+                <div class="article">
+                    <div class="image i4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ftrWrap">
+        <div class="footer">
+            <div class="ftrLeft">
+                <h1>logo</h1>
+            </div>
+            <div class="ftrMid">
+                <ul class="nav">
+                    <li>개인정보처리방침</li>
+                    <li>사이트맵</li>
+                    <li>찾아오는 길</li>
+                </ul>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique rem cupiditate, autem ut tenetur pariatur officiis obcaecati quae nemo quis, unde illo id reiciendis facere! Iure necessitatibus corporis nam blanditiis?orem ipsum, dolor sit amet consectetur adipisicing elit. Similique rem cupiditate, autem ut tenetur pariatur officiis obcaecati quae nemo quis, unde illo id reiciendis facere! Iure necessitatibus corporis nam blanditiis?orem ipsum, dolor sit amet consectetur adipisicing elit. Similique rem cupiditate, autem ut tenetur pariatur officiis obcaecati quae nemo quis, unde illo id reiciendis facere! Iure necessitatibus corporis nam blanditiis?</p>
+            </div>
+            <div class="ftrRight">
+                <div class="sns">
+                    <i class="xi-instagram"></i>
+                    <i class="xi-facebook"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

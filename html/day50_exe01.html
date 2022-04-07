@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        div.toggleSlide{
+            background-color: #fc0;
+        }
+        div.toggleClass{
+            width: 0px;
+            background-color: red;
+            transition: all 0.5s;
+        }
+        div.toggleClass.on{
+            width: 500px;
+            background-color: green;
+        }
+        div.toggleFade{
+            background-color: blue;
+        }
+        ul.aco{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 200px;
+        }
+        ul.aco>li:nth-child(odd){
+            line-height: 40px;
+            background-color: #fc0;
+        }
+        /* ul.aco>li.show+li{
+            height: 80px;
+        } */
+        ul.aco>li:nth-child(even){
+            height: 80px;
+            background-color: #333;
+            color: #fff;
+            overflow: hidden;
+            /* transition: all 0.5s; */
+        }
+        ul.aco>li:nth-child(even)>p{
+            line-height: 20px;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+        
+    </style>
+    <script>
+        $(function(){
+            //토글은 원래 있었던 것을 없애는 것만 가능함.
+            $('button').eq(0).click(function(){
+                $('.toggleSlide').slideToggle(500);
+            });
+            $('button').eq(1).click(function(){
+                $('.toggleClass').toggleClass('on');
+            });
+            $('button').eq(2).click(function(){
+                $('.toggleFade').fadeToggle(500);
+            });
+
+            $('.aco>li:even').click(function(){
+                // $(this).toggleClass('show');
+                $(this).next().slideToggle(500);
+                
+                if($(this).find('span').text() == '-'){
+                    $(this).find('span').text('+');
+                }else{
+                    $(this).find('span').text('-');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>토글 슬라이드</button>
+    <div class="toggleSlide"></div>
+    <button>토글 클래스</button>
+    <div class="toggleClass"></div>
+    <button>토글 페이드</button>
+    <div class="toggleFade"></div>
+
+    <ul class="aco">
+        <li>title<span>-</span></li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quidem optio, excepturi magnam cupiditate eveniet quam itaque fugiat odio, nihil deleniti ad! Fugit non possimus provident! Perspiciatis harum ab ad?</p></li>
+        <li>title<span>-</span></li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quidem optio, excepturi magnam cupiditate eveniet quam itaque fugiat odio, nihil deleniti ad! Fugit non possimus provident! Perspiciatis harum ab ad?</p></li>
+        <li>title<span>-</span></li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quidem optio, excepturi magnam cupiditate eveniet quam itaque fugiat odio, nihil deleniti ad! Fugit non possimus provident! Perspiciatis harum ab ad?</p></li>
+        <li>title<span>-</span></li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quidem optio, excepturi magnam cupiditate eveniet quam itaque fugiat odio, nihil deleniti ad! Fugit non possimus provident! Perspiciatis harum ab ad?</p></li>
+        <li>title<span>-</span></li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quidem optio, excepturi magnam cupiditate eveniet quam itaque fugiat odio, nihil deleniti ad! Fugit non possimus provident! Perspiciatis harum ab ad?</p></li>
+    </ul>
+</body>
+</html>

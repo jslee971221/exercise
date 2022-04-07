@@ -1,0 +1,322 @@
+/* 높이는 가장 안에 있는 요소에 주기 (flex 위해서) */
+/* wrap에는 전체 배경이나 margin-top을 줄 때만 사용 */
+
+li, i{
+    cursor: pointer;
+}
+body{
+    position: relative;
+}
+
+div.hdrWrap{
+    background-color: #2c2c2c;
+    color: #fff;
+    width: 100%;
+    transition: all 0.5s;
+}
+div.hdrWrap.fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fc0;
+    color: #000;
+    z-index: 900;
+}
+
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 80px;
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>h1{
+    font-size: 20px;
+    float: left;
+}
+div.hdrWrap>div.header>ul.nav{
+    float: right;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    font-size: 20px;
+    text-transform: capitalize;
+    float: left;
+    margin-left: 40px;
+}
+div.mainWrap{
+    background-color: #535353;
+}
+div.mainWrap>div.main{
+    height: 640px;
+}
+
+div.cntWrap{
+    margin-top: 80px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 20px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.cntWrap>div.content>div.header>p{
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 12px;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 40px;
+}
+
+div.cntWrap>div.content.cnt01>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content.cnt01>div.header>p{
+    width: calc(100% / 12 * 5);
+    margin: 0 auto;
+}
+
+div.cntWrap>div.content.cnt01>div.section>div.artView{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup{
+    width: 133.33%;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article{
+    width: calc(100% / 8 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image{
+    height: 200px;
+    background-color: #585858;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i1{
+    background-color: red;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i2{
+    background-color: orange;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i3{
+    background-color: yellow;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i4{
+    background-color: green;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i5{
+    background-color: blue;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i6{
+    background-color: navy;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i7{
+    background-color: purple;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i8{
+    background-color: #585858;
+}
+
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article:nth-child(4)>div.image{
+    height: 240px;
+    margin-top: 0px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article:nth-child(5)>div.image{
+    height: 240px;
+    margin-top: 0px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.btns{
+    width: calc(100% / 6 - 20px);
+    height: 40px;
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.btns>i:nth-child(2){
+    margin-left: 20px;
+}
+
+div.cntWrap:nth-child(4){
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 80px;
+}
+div.cntWrap>div.content.cnt02>div.header>h2{
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt02>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article:hover>div.texts{
+    opacity: 1;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    background-color: #fff;
+    height: 320px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    background-color: #8d8d8d;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h3{
+    line-height: 80px;
+    text-align: center;
+    font-size: 20px;
+}
+
+div.cntWrap>div.content.cnt03>div.header>h2{
+    line-height: 80px;
+    margin-left: 10px;
+}
+div.cntWrap>div.content.cnt03>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content.cnt03>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article{
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1){
+    width: calc(100% / 12 * 3 - 20px);
+    margin: 0 10px;
+    height: 400px;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1):hover>div.texts{
+    margin-top: -400px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1):hover>div.image{
+    background-color: #e0e0e0;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1)>div.image{
+    height: 400px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1)>div.texts{
+    text-align: center;
+    padding: 40px 20px;
+    transition: margin-top 0.5s;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1)>div.texts>h3{
+    line-height: 80px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1)>div.texts>p{
+    line-height: 12px;
+    line-height: 20px;
+    height: 240px;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article div.image{
+    background-color: #aaa;
+}
+
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(2){
+    width: calc(100% / 12 * 3 - 20px);
+    margin: 0 10px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(2)>div.image{
+    height: 220px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(3){
+    width: calc(100% / 12 * 6 - 20px);
+    margin: 0 10px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(3)>div.image{
+    height: 220px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(4){
+    width: calc(100% / 12 * 9 - 20px);
+    margin: 0 10px;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(4)>div.image{
+    height: 160px;
+}
+
+div.ftrWrap{
+    margin-top: 80px;
+    background-color: #000;
+    color: #fff;
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+div.ftrWrap>div.footer::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.ftrWrap>div.footer>div.ftrLeft{
+    width: calc(100% / 12 * 2);
+    float: left;
+}
+div.ftrWrap>div.footer>div.ftrLeft>h1{
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 40px;
+}
+div.ftrWrap>div.footer>div.ftrMid{
+    width: calc(100% / 12 * 8);
+    float: left;
+}
+div.ftrWrap>div.footer>div.ftrMid>ul.nav{
+    height: 40px;
+}
+div.ftrWrap>div.footer>div.ftrMid>ul.nav>li{
+    float: left;
+    line-height: 40px;
+    margin-right: 20px;
+}
+div.ftrWrap>div.footer>div.ftrMid>p{
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+div.ftrWrap>div.footer>div.ftrRight{
+    width: calc(100% / 12 * 2);
+    text-align: right;
+    float: left;
+}
+div.ftrWrap>div.footer>div.ftrRight>div.sns{
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 80px;
+}

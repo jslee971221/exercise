@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/day51_exe01.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.topBtn').click(function(){
+                $('html, body').animate({
+                //html일수도, body일수도 있음. 전체를 선택할 때
+                    scrollTop : 0
+                },500, function(){
+                    $('.topBtn').css({opacity : 0});
+                });
+            });
+            $(window).scroll(function(){
+                if($(window).scrollTop() == 0){
+                    $('.topBtn').css({opacity : 0});
+                }else{
+                    $('.topBtn').css({opacity : 1});
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="mnTopWrap">
+        <div class="menuTop">
+            <div class="info">
+                <h4>kkb04182@naver.com</h4>
+                <h4>tel.010-1234-5678</h4>
+            </div>
+            <nav>
+                <h4>login</h4>
+                <h4>signin</h4>
+                <h4>membership</h4>
+                <h4>contact</h4>
+            </nav>
+        </div>
+    </div>
+
+    <div class="hdrWrap">
+        <header>
+            <h1>logohere</h1>
+            <nav>
+                <h4>about</h4>
+                <h4>news</h4>
+                <h4>portfolio</h4>
+                <h4>board</h4>
+                <h4>album</h4>
+                <h4>contact</h4>
+            </nav>
+        </header>
+    </div>
+
+    <div class="mainWrap">
+        <main>
+            <div class="texts">
+                <h2>
+                남는 위하여, 노래하며<br> 
+                사랑의 지혜는 황금시대다.
+                </h2>
+                <p>
+                간에 역사를 갑 동산에는 곳이 만천하의 관현악이며, 끓는다. 것이 무엇을 가슴이 이상의 보이는 인생의 원질이 품에 피다. 얼마나 그들의 쓸쓸한 같이, 찾아 사막이다. 쓸쓸한 낙원을 사는가 황금시대다. 영원히 그들의 동산에는 풀밭에 뿐이다. 사람은 것은 없으면, 것이다. 풍부하게 봄바람을 살았으며, 같이, 구하기 두기 이성은 것이다.
+                </p>
+            </div>
+            <div class="btns">
+                <div class="btn">
+                    <i class="xi-html5"></i>
+                    <span>HTML</span>
+                    <i class="xi-play"></i>
+                </div>
+                <div class="btn">
+                    <i class="xi-css3"></i>
+                    <span>CSS</span>
+                    <i class="xi-angle-right"></i>
+                </div>
+                <div class="btn">
+                    <i class="xi-javascript"></i>
+                    <span>Java Script</span>
+                    <i class="xi-angle-right"></i>
+                </div>
+                <div class="btn">
+                    <i class="xi-search"></i>
+                    <span>search</span>
+                    <i class="xi-angle-right"></i>
+                </div>
+            </div> 
+        </main>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt01">
+            <header>
+                <div class="hdrLeft">
+                    <h2>now</h2>
+                    <ul class="tab">
+                        <li>한글</li>
+                        <li>기역소개</li>
+                        <li>니은소개</li>
+                        <li>디귿소개</li>
+                        <li>리을소개</li>
+                        <li>미음소개</li>
+                        <li>가나다</li>
+                    </ul>
+                </div>
+                <div class="hdrRight">
+                    <div class="btn">
+                        <i class="xi-angle-left"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="xi-angle-right"></i>
+                    </div>
+                    <div class="btn">
+                        <i class="xi-pause"></i>
+                    </div>
+                </div>
+            </header>
+            <section>
+                <div class="artGroup">
+                    <article>
+                        <div class="image i1"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image i2"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image i3"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image i4"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image i5"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="image i6"></div>
+                        <div class="texts">
+                            <h5>[카테고리]</h5>
+                            <h3>아티클 내용의 제목은 여기에</h3>
+                            <p>얼마나 고행을 사랑의 없으면 천고에 많이 동산에는 곳이 가는 말이다. 능히 아름답고 가슴이 열매를 같은 위하여, 피다. 피어나는 어디 인생을 있으랴? 평화스러운 풀밭에 이상은 것이다. 노년에게서 힘차게 싹이 커다란 든 얼음에 바이며, 풍부하게 말이다. 청춘 얼마나 청춘이 없으면, 청춘의 방지하는 위하여서. 속에서 이상이 착목한는 꽃이 속잎나고, 뭇 위하여 오아이스도 보라. 청춘에서만 가슴에 따뜻한 영원히 길지 뜨고, 오아이스도 노래하며 쓸쓸한 봄</p>
+                            <div class="btn">
+                                <i class="xi-long-arrow-right"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="bnrWrap">
+        <div class="banner bnr01">
+            <h2>2,345,678</h2>
+            <p>그러나 우는 이름과, 덮어 벌써 오면 까닭입니다. 이웃 소학교 묻힌 아이들의 라이너 별 이름과, 듯합니다. 북간도에 벌써 언덕 있습니다그러나 나는 책상을 말 가난한 내 차 그리워 아름다운 거외다.</p>
+            <div class="btn">
+                join us
+            </div>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt02">
+            <header>
+                <div class="hdrLeft">
+                    <h2>calendar</h2>
+                    <h5>말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다.</h5>
+                </div>
+                <div class="hdrRight">
+                    more..
+                </div>
+            </header>
+            <section>
+                <article>
+                    <div class="image i1"></div>
+                    <div class="texts">
+                        <div class="txtLeft">
+                            <div class="score">
+                                <h3>15</h3>
+                                <h5>best</h5>
+                            </div>
+                            <h5>라이너 그러나 사람들의</h5>
+                        </div>
+                        <div class="txtRight">
+                            <h3>벌레는 다하지 이름을 까닭입니다.</h3>
+                            <p>나는 책상을 말 가난한 내 차 그리워 아름다운 거외다. 청춘이 별 이름과, 까닭이, 별빛이 프랑시스
+                            위에 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.듯합니다. 위에 무덤 하나에 어머니, 비둘기</p>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="image i2"></div>
+                    <div class="texts">
+                        <div class="txtLeft">
+                            <div class="score">
+                                <h3>15</h3>
+                                <h5>best</h5>
+                            </div>
+                            <h5>라이너 그러나 사람들의</h5>
+                        </div>
+                        <div class="txtRight">
+                            <h3>벌레는 다하지 이름을 까닭입니다.</h3>
+                            <p>나는 책상을 말 가난한 내 차 그리워 아름다운 거외다. 청춘이 별 이름과, 까닭이, 별빛이 프랑시스
+                            위에 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.듯합니다. 위에 무덤 하나에 어머니, 비둘기</p>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="image i3"></div>
+                    <div class="texts">
+                        <div class="txtLeft">
+                            <div class="score">
+                                <h3>15</h3>
+                                <h5>best</h5>
+                            </div>
+                            <h5>라이너 그러나 사람들의</h5>
+                        </div>
+                        <div class="txtRight">
+                            <h3>벌레는 다하지 이름을 까닭입니다.</h3>
+                            <p>나는 책상을 말 가난한 내 차 그리워 아름다운 거외다. 청춘이 별 이름과, 까닭이, 별빛이 프랑시스
+                            위에 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.듯합니다. 위에 무덤 하나에 어머니, 비둘기</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    <div class="bnrWrap">
+        <div class="banner bnr02">
+            <div class="texts">
+                <h2>in the media</h2>
+                <h5>그러나 나는 책상을 말 가난한 내 차 그리워</h5>
+                <p>그러나 우는 이름과, 덮어 벌써 오면 까닭입니다. 이웃 소학교 묻힌 아이들의 라이너 별 이름과, 듯합니다. 북간도에 벌써 언덕 있습니다. 그러나 나는 책상을 말 가난한 내 차 그리워 아름다운 거외다. 청춘이 별 이름과, 까닭이요, 별빛이 프랑시스 위에 듯합니다. 위에 무덤 하나에 어머니, 비둘기, 하나 못 봅니다. 말 나는 쓸쓸함과 이 라이너 봅니다. 이웃 하나에 하나 봅니다. 라이너 그러나 사람들의 속의 패, 벌레는 다하지 이름을 까닭입니다. 가슴속에 멀듯이, 내 나의 봅니다.</p>
+                <div class="btn">more..</div>
+            </div>
+            <div class="image"></div>
+        </div>
+    </div>
+
+    <div class="ftrWrap">
+        <footer>
+            <div class="info">
+                <h4>Located</h4>
+                <h4>서울시 강서구 화곡동 1234</h4>
+                <p>어 벌써 오면 까닭입니다. 이웃 소학교 묻힌 아이들의 라이너 별 이름과, 듯합니다. 북간도에 벌써 언덕 있습니다. </p>
+            </div>
+            <ul>
+                <li>Contact Us</li>
+                <li>러나 우는 이름과,</li>
+                <li>덮어 벌써 오면 까닭입니다.</li>
+                <li>이웃 소학교 묻힌 아이들의 </li>
+                <li>라이너 별 이름과, 듯합니다. </li>
+            </ul>
+            <ul>
+                <li>Notice</li>
+                <li>러나 우는 이름과,</li>
+                <li>덮어 벌써 오면 까닭입니다.</li>
+                <li>이웃 소학교 묻힌 아이들의 </li>
+                <li>라이너 별 이름과, 듯합니다. </li>
+            </ul>
+            <ul>
+                <li>More..</li>
+                <li>러나 우는 이름과,</li>
+                <li>덮어 벌써 오면 까닭입니다.</li>
+                <li>이웃 소학교 묻힌 아이들의 </li>
+                <li>라이너 별 이름과, 듯합니다. </li>
+            </ul>
+        </footer>
+    </div>
+
+    <div class="topBtn">
+        TOP
+    </div>
+</body>
+</html>
