@@ -108,6 +108,7 @@ div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>d
     height: 200px;
     background-color: #585858;
     margin-top: 40px;
+    transition: all 0.3s;
 }
 div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article>div.image.i1{
     background-color: red;

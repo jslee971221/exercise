@@ -311,6 +311,7 @@ p{
     font-size: 18px;
     font-weight: 700;
     line-height: 40px;
+    display: flex;
 }
 .cnt02 .txtRight p{
     font-size: 12px;
@@ -318,7 +319,20 @@ p{
     height: 60px;
     overflow: hidden;
 }
-
+.cnt02 article:hover .txtRight h3::after{
+    content: 'N';
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 10px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
 .bnrWrap:nth-child(7){
     background-color: #7da5d6;
 }

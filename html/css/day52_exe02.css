@@ -1,0 +1,92 @@
+body{
+    overflow-x: hidden;
+}
+.cntWrap{
+    margin-top: 160px;
+    padding-bottom: 160px;
+}
+.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+header{
+    width: calc(100% / 12 * 5);
+    padding-left: 20px;
+}
+header h2{
+    line-height: 80px;
+    font-weight: 700;
+    font-size: 36px;
+}
+header p{
+    height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+}
+section{
+    margin-top: 80px;
+}
+section::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+article{
+    float: left;
+    /* margin: 0 10px; */
+}
+
+.artLeft{
+    width: calc(100% / 12 * 5 - 20px);
+    height: 600px;
+    position: relative;
+}
+.artLeft .image{
+    width: 100%;
+    margin-top: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.artLeft .texts{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.artRight{
+    width: calc(100% / 12 * 7);
+    margin-left: 20px;
+}
+.artRight .texts{
+    margin-top: 40px;
+}
+.texts{
+    padding-left: 20px;
+    padding-right: 40px;
+}
+section h3{
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 24px;
+}
+section p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+/* .i1{
+    direction: rtl;
+} */
+.i1 .ovrGrid{
+    margin-left: min(calc((100vw - 1080px) / -2), calc((100vw - 80vw) / -2));
+}
+.ovrGrid{
+    width: calc(100% + (100vw - 1080px) / 2);
+    min-width: calc(100% + (100vw - 80vw) / 2);
+    height: 440px;
+    background-color: #555;
+}
