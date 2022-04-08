@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .btns{
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn{
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .nemo{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.btn').click(function(){
+                var col = $(this).attr('data-color');
+                var img = $(this).attr('data-img');
+                $('.nemo').css({
+                    backgroundImage: 'url(\'' + img + '\')'
+                });
+            });
+          
+        });
+    </script>
+</head>
+<body>
+    <div class="btns">
+        <div class="btn" data-color="red" data-img="./images/folk.jpg">빨강</div>
+        <div class="btn" data-color="blue" data-img="./images/hiphop.jpg">파랑</div>
+        <div class="btn" data-color="yellow" data-img="./images/rock.jpg">노랑</div>
+    </div>
+    <div class="nemo"></div>
+</body>
+</html>
