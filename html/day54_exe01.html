@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        article{
+            width: calc(100% / 4 - 20px);
+            perspective: 1000px;
+        }
+        .image{
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotateZ(0deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .image.i1{
+            background-image: url('./images/1.취중고백_김민석\(멜로망스\).PNG');
+        }
+        .image.i2{
+            background-image: url('./images/10.눈이\ 오잖아_이무진feat헤이즈.PNG');
+        }
+        .image.i3{
+            background-image: url('./images/2.사랑은\ 늘\ 도망가_임영웅.PNG');
+        }
+        .image.i4{
+            background-image: url('./images/6.ELEVEN_IVE\(아이브\).PNG');
+        }
+        .texts{
+            height: 240px;
+            margin-top: -240px;
+            background-color: #ccc;
+            padding: 20px;
+            transform: rotateZ(180deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .texts h3{
+            font-size: 15px;
+            line-height: 40px;
+        }
+        .texts p{
+            font-size: 12px;
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+        article:hover .image{
+            transform: rotateZ(180deg);
+        }
+        article:hover .texts{
+            transform: rotateZ(360deg);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article>
+            <div class="image i1"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestias aut sequi, et ex quae ad? Nam sit corrupti quisquam vitae optio, quibusdam minus voluptatum. Fugiat natus facere blanditiis molestias!
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="image i2"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque consequuntur amet odio magni dolorum at, nesciunt tenetur ad deserunt perspiciatis possimus earum esse assumenda eos, impedit veritatis itaque ab. Nostrum.
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="image i3"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cumque ut velit animi hic ea quidem dolores voluptas ab pariatur. Aspernatur et perspiciatis esse voluptatum ipsam fuga vitae quisquam aliquid!
+                </p>
+            </div>
+        </article>
+        <article>
+            <div class="image i4"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta temporibus, nobis qui dolorum saepe esse totam maxime alias, dicta, accusantium rerum repellendus sapiente tenetur nisi quidem non adipisci explicabo harum.
+                </p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
