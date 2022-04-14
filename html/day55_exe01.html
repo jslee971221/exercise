@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        .artView{
+            width: 80%;
+            max-width: 1080px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .artGroup{
+            width: 500%;
+            display: flex;
+        }
+        article{
+            width: calc(100% / 5);
+            height: 500px;
+            font-size: 72px;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+        .a1{
+            background-color: red;
+        }
+        .a2{
+            background-color: blue;
+        }
+        .a3{
+            background-color: green;
+        }
+        .a4{
+            background-color: gold;
+        }
+        .a5{
+            background-color: orange;
+        }
+        .btns{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            font-size: 30px;
+            line-height: 40px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+        .paging{
+            width: 20%;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ccc;
+            transition: all 0.5s;
+        }
+        .show{
+            width: 40px;
+            background-color: #fc0;
+        }
+    </style>
+    <script>
+        $(function(){
+            //변수
+            var artGroup = $('.artGroup');
+            var paging = $('.paging li');
+            var btn = $('.btns div');
+            var ind = 0;
+            //함수
+            function slide(j){
+                artGroup.animate({
+                    marginLeft : j +'%'
+                }, 500, function(){
+                    if(j == 0){
+                        artGroup.find('article:last').prependTo(artGroup);
+                    }else{
+                        artGroup.find('article:first').appendTo(artGroup);  
+                    }
+                    artGroup.css({
+                            marginLeft : '-100%'
+                        });
+                    ind = artGroup.find('article:eq(1)').attr('data-num');
+                    paging.removeClass('show');
+                    paging.eq(ind).addClass('show');
+                });
+            }
+
+            //기본세팅
+            artGroup.find('article:last').prependTo(artGroup);
+            artGroup.css({
+                marginLeft : '-100%'
+            });
+
+            //이벤트
+            btn.first().click(function(){
+                    slide(0);
+            });
+            btn.last().click(function(){
+                    slide(-200);
+            });
+            paging.click(function(){
+                var now = $(this).index();
+                if(ind < now){
+                    for(var i = ind; i < now; i++){
+                        slide(-200);
+                    }
+                }else{
+                    for(var i = now; i < ind; i++){
+                        slide(0);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <article class="a1" data-num="0">0</article>
+            <article class="a2" data-num="1">1</article>
+            <article class="a3" data-num="2">2</article>
+            <article class="a4" data-num="3">3</article>
+            <article class="a5" data-num="4">4</article>
+        </div>
+        <div class="btns">
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

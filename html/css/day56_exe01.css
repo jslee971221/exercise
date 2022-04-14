@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'xeicon';
+    src: url('../css/fonts/xeicon.ttf') format('truetype'); 
+}
+html{
+    font-size: 3vw;
+}
+body{
+    font-size: 0.7vw;
+}
+i{
+    font-family: 'xeicon';
+    cursor: pointer;
+}
+.btn, nav h4, li, .cnt02 .hdrRight{
+    cursor: pointer;
+}
+.mnTop, .hdrWrap header, .main, .content, .banner, footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+p{
+    font-size: min(1.2em, 12px);
+    overflow: hidden;
+    line-height: min(0.5rem, 20px);
+}
+.mnTopWrap{
+    background-color: #000;
+}
+.mnTop{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    line-height: min(1rem, 40px);
+    font-size: min(1.6em, 16px);
+}
+.mnTop .info{
+    display: flex;
+    width: calc(100% / 12 * 4.3);
+    justify-content: space-between;
+}
+.mnTop nav{
+    display: flex;
+    width: calc(100% / 12 * 3.8);
+    justify-content: space-between;
+}
+
+.hdrWrap{
+    background-color: #000;
+}
+.hdrWrap header{
+    line-height: min(2rem, 40px);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.hdrWrap nav{
+    width: calc(100% / 12 * 7);
+    display: flex;
+    justify-content: space-between;
+    font-size: min(1.6em, 16px);
+}
+.hdrWrap h1{
+    font-size: min(2.4em, 24px);
+}
+.mainWrap{
+    background-color: #000;
+}
+.main{
+    color: #fff;
+    padding-top: min(5rem, 200px);
+    padding-bottom: min(1.5rem, 60px);
+}
+.main h2{
+    line-height: min(1.5rem, 60px);
+    font-size: min(4.5em, 45px);
+    font-weight: 700;
+}
+.main p{
+    width: calc(100% / 12 * 5.5);
+    height: min(2rem, 80px);
+}
+.main .btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: min(5rem, 200px);
+}
+.main .btn{
+    width: calc(100% / 4 - 20px);
+    background-color: #fff;
+    color: #000;
+    line-height: min(1.5rem, 60px);
+    display: flex;
+    justify-content: space-around;
+    font-size: min(1.6em, 16px);
+    border-radius: 10px;
+}
+.main .btn:hover{
+    background-color: #fc0;
+}
+.main .btn i{
+    font-size: min(2em, 20px);
+}
+.cntWrap, .bnrWrap, .ftrWrap{
+    margin-top: min(3rem, 120px);
+}
+
+.content header{
+    display: flex;
+    justify-content: space-between;
+}
+.content h2, .banner h2{
+    font-size: min(4.8em, 48px);
+    font-weight: 700;
+    line-height: min(2rem, 80px);
+}
+.cnt02 header h2, .bnr02 h2{
+    line-height: min(1rem, 40px);
+}
+.content section h3, .banner h5{
+    font-size: min(1.8em, 18px);
+    line-height: min(1rem, 40px);
+    font-weight: 700;
+}
+
+
+
+.cnt01 .hdrLeft{
+    width: calc(100% / 12 * 8);
+    display: flex;
+   
+}
+.cnt01 .hdrLeft h2{
+    line-height: min(2rem, 80px);
+}
+.cnt01 .menu{
+    width: calc(100% / 8 * 6);
+    display: flex;
+    justify-content: space-between;
+    font-size: min(1.2em, 12px);
+    font-weight: 700;
+    line-height: min(0.5rem, 20px);
+    padding-top: min(0.5rem, 20px);
+    margin-left: calc(100% / 12 * 0.4);
+}
+.cnt01 .menu li{
+    width: calc(100% / 7 - 20px);
+    text-align: center;
+}
+.cnt01 .menu li:hover::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: min(0.2rem, 8px);
+    background-color: #fc0;
+    margin-top: min(0.25rem, 10px);
+}
+.cnt01 .hdrRight{
+    width: calc(100% / 12 * 2);
+    line-height: min(1.5rem, 60px);
+    font-size: min(3em, 30px);
+}
+.cnt01 .hdrRight .btns{
+    display: flex;
+}
+.cnt01 .hdrRight i{
+    width: calc(100% / 3);
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.cnt01 section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: min(1rem, 40px);
+}
+.cnt01 article{
+    width: calc(100% / 3 - 20px);
+    border: 1px solid #333;
+}
+.cnt01 article .image{
+    height: min(5rem, 200px);
+    background-color: #333;
+}
+.cnt01 article .texts{
+    padding-top: min(0.5rem, 20px);
+    padding-left: calc(100% / 4 * 0.5);
+    
+}
+.cnt01 article h5{
+    font-size: min(1.2em, 12px);
+    line-height: min(0.5rem, 20px);
+    font-weight: 700;
+}
+.cnt01 article p{
+    height: min(2rem, 80px);
+    margin-top: min(1rem, 40px);
+    padding-right: calc(100% / 4 * 0.5);
+}
+.cnt01 article .btn{
+    width: calc(100% / 4);
+    background-color: #777;
+    color: #333;
+    text-align: center;
+    font-size: min(3em, 30px);
+    font-weight: 700;
+    line-height: min(1rem, 40px);
+    margin-left: auto;
+    margin-top: min(1rem, 40px);
+}
+
+.bnrWrap:nth-child(5){
+    background-color: #fc3;
+}
+.bnr01{
+    text-align: center;
+    padding: min(2rem, 80px) 0;
+}
+.bnr01 p{
+    width: calc(100% / 12 * 8);
+    margin: 0 auto;
+}
+.bnr01 .btn{
+    line-height: min(1rem, 40px);
+    background-color: #fff;
+    width: calc(100% / 12);
+    margin: 0 auto;
+    margin-top: min(1rem, 40px);
+}
+
+.cnt02 .hdrLeft h5{
+    font-size: min(1.4em, 14px);
+    line-height: min(0.5rem, 20px);
+    margin-top: min(0.5rem, 20px);
+}
+.cnt02 .hdrRight{
+    line-height: min(1rem, 40px);
+    font-size: min(1.2em, 12px);
+}
+.cnt02 section article{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: min(1rem, 40px);
+}
+.cnt02 article .image{
+    width: calc(100% / 12 * 3 - 20px);
+    height: min(3rem, 120px);
+    background-color: #ddd;
+}
+.cnt02 article .texts{
+    width: calc(100% / 12 * 9 - 20px);
+    display: flex;
+    justify-content: space-between;
+}
+.cnt02 article .txtLeft{
+    width: calc(100% / 9 * 2 - 10px);
+}
+.cnt02 article .txtRight{
+    width: calc(100% / 9 * 7 - 10px);
+}
+.cnt02 .texts h2{
+    color: #fc0;
+    font-style: italic;
+}
+.cnt02 .score{
+    display: flex;
+}
+.cnt02 .score h5{
+    font-size: min(1.2em, 12px);
+    line-height: (0.5rem, 20px);
+    margin-top: min(1rem, 40px);
+    margin-left: calc(100% / 2 * 0.2);
+}
+.cnt02 .txtLeft>h5{
+    font-style: italic;
+    line-height: min(0.5rem, 20px);
+    font-size: min(1.2em, 12px);
+}
+.cnt02 p{
+    height: min(1.5rem, 60px);
+}
+.cnt02 .txtRight h3{
+    display: flex;
+}
+.cnt02 .txtRight h3:hover::after{
+    content: 'N';
+    display: block;
+    font-style: italic;
+    color: #fff;
+    background-color: red;
+    width: 20px;
+    height: min(0.5rem, 20px);
+    line-height: min(0.5rem, 20px);
+    border-radius: 50%;
+    font-size: min(1.2em, 12px);
+    text-align: center;
+    margin-left: 10px;
+    margin-top: min(0.25rem, 10px);
+}
+
+.bnrWrap:nth-child(7){
+    background-color: #7da5d6;
+}
+.bnr02{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: min(3rem, 120px) 0;
+}
+.bnr02 .texts{
+    width: calc(100% / 12 * 7);
+}
+.bnr02 .image{
+    width: calc(100% / 12 * 4 - 20px);
+    height: min(6rem, 240px);
+    background-color: #ddd;
+}
+.bnr02 h5{
+    margin-top: min(0.25rem, 10px);
+    line-height: min(0.5rem, 20px);
+}
+.bnr02 p{
+    height: min(1.5rem, 60px);
+    margin-top: min(0.25rem, 10px);
+}
+.bnr02 .btn{
+    margin-top: min(1rem, 40px);
+    background-color: #f39800;
+    width: calc(100% / 7 * 1.25);
+    text-align: center;
+    line-height: min(1rem, 40px);
+    font-size: min(1.2em, 12px);
+}
+
+.ftrWrap{
+    background-color: #333;
+}
+footer{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: min(1.2em, 12px);
+    padding-top: min(1.5rem, 60px);
+    padding-bottom: min(2rem, 80px);
+}
+footer .info{
+    width: calc(100% / 12 * 3 - 20px);
+    line-height: min(1rem, 40px);
+}
+footer .info h4:nth-child(3){
+    line-height: min(0.325rem,13px);
+}
+footer ul{
+    width: calc(100% / 12 * 2 - 20px);    
+}
+footer li:nth-child(1){
+    line-height: min(1rem, 40px);
+}
+footer li{
+    line-height: min(0.5rem, 20px);
+}
+footer ul:nth-child(4){
+    width: calc(100% / 12 * 2);
+}
+footer ul:nth-child(4) li:nth-child(1)~li{
+    margin-left: calc(100% / 2 * 0.2);
+}
