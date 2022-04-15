@@ -1,0 +1,123 @@
+html{
+    font-size: 3vw;
+}
+body{
+    font-size: 0.7vw;
+}
+
+.bnrWrap, .cntWrap, .ftrWrap{
+    margin-top: min(3rem, 120px);
+}
+.mnTop, .hdrWrap header, .main, .content, .banner, footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.content header{
+    text-align: center;
+}
+.content h2, .banner h2{
+    line-height: min(1rem, 40px);
+    font-size: min(3.2em, 32px);
+    font-weight: 700;
+}
+.content h2::after{
+    display: block;
+    content: '';
+    width: 10%;
+    height: 5px;
+    background-color: green;
+    margin: 0 auto;
+    margin-top: min(0.44rem, 17.5px);
+}
+.content header h5, .banner header h5{
+    line-height: min(1rem, 40px);
+    font-size: min(1.2em, 12px);
+    color: #666;
+}
+.content header p, .banner header p{
+    margin-top: min(0.44rem, 17.5px);
+}
+.content p, .banner p, footer p{
+    line-height: min(0.5rem, 20px);
+    font-size: min(1.2em, 12px);
+    color: #333;
+}
+section h3, .banner h3{
+    font-size: min(1.6em, 16px);
+    line-height: min(1rem, 40px);
+    font-weight: 700;
+}
+section .bnt{
+    font-size: min(1.5em, 15px);
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: min(1rem, 40px);
+}
+article{
+    width: calc(100% / 4 - 20px);
+}
+nav h4, .btn, i, input, select, h1, header .left, header .right{
+    cursor: pointer;
+}
+
+.mnTopWrap{
+    background-color: #000;
+}
+.mnTop{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    line-height: min(1rem, 40px);
+    font-size: min(1.2em, 12px);
+}
+.mnTop .info{
+    width: calc(100% / 12 * 3.8);
+    display: flex;
+    justify-content: space-between;
+}
+.mnTop nav{
+    width: calc(100% / 12 * 3.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.hdrWrap .hdrTop{
+    line-height: min(1rem, 40px);
+    padding: min(1rem, 40px) 0;
+    display: flex;
+    justify-content: space-between;
+}
+.hdrWrap h1{
+    font-size: min(2.5em, 25px);
+    font-weight: 700;
+}
+.hdrWrap .left{
+    width: calc(100% / 12 * 2);
+}
+.hdrWrap .right{
+    width: calc(100% / 12 * 2);
+    background-color: #fc0;
+    padding-left: calc((100% / 12 * 2) / 10);
+}
+.hdrWrap .hdrBtm{
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    color: #fff;
+    line-height: min(2rem, 80px);
+    font-size: min(1.6em, 16px);
+}
+.hdrWrap nav{
+    width: calc(100% / 12 * 6.5);
+    display: flex;
+    justify-content: space-around;
+}
+
+.hdrWrap .btns{
+    width: calc(100% / 12 * 1.5);
+    text-align: center;
+    font-size: min(2em, 20px);
+}
