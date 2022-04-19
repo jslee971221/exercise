@@ -1,3 +1,6 @@
+$titleFZ: 16px;
+$wid: calc(100%/ 12 * 5);
+
 //그리드 설정
 .mnTop, .hdrWrap header, .main, .content, .banner, footer{
         width: 80%;
@@ -27,7 +30,7 @@ p{
     .mnTop{
         display: flex;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: $titleFZ;
         line-height: 40px;
         color: #fff;
         .info{
