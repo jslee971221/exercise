@@ -3,12 +3,30 @@ $mainh2lh : 80px;
 $mainp: 24px;
 $mainplh: 40px;
 $conTitle: 36px;
-$lh: 40px;
-$p: 12px;
-$plh: 20px;
-$h3: 24px;
-$gridwd: 80%;
-$maxwd: 1080px;
+$lh: #{'min(1rem, 40px)'};
+$p: #{'min(1.2em, 12px)'};
+$plh: #{'min(0.5rem, 20px)'};
+$h3: #{'min(2,4em, 24px)'};
+
+
+@mixin bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin grid{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+    }
+}
+
 
 nav h4, .btn, i, h1, h3, .image{
     cursor: pointer;
@@ -16,9 +34,7 @@ nav h4, .btn, i, h1, h3, .image{
 .hdrWrap{
     background: linear-gradient(90deg, #ff6a00, #ffb13b);
     header{
-        width: $gridwd;
-        max-width: $maxwd;
-        margin: 0 auto;
+        @include grid;
         display: flex;
         justify-content: space-between;
         color: #fff;
@@ -39,9 +55,7 @@ nav h4, .btn, i, h1, h3, .image{
 .mainWrap{
     background-color: #bbb;
     .main{
-        width: $gridwd;
-        max-width: $maxwd;
-        margin: 0 auto;
+        @include grid;
         padding-top: 240px;
         padding-bottom: 360px; 
         h2{
@@ -62,9 +76,7 @@ nav h4, .btn, i, h1, h3, .image{
 .cntWrap{
     margin-top: 120px;
     .content{
-        width: $gridwd;
-        max-width: $maxwd;
-        margin: 0 auto;
+        @include grid;
         header{
             text-align: center;
             h2{
@@ -87,9 +99,7 @@ nav h4, .btn, i, h1, h3, .image{
             margin-top: 80px;
             article{
                 .image{
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
+                    @include bg;
                 }
                 .texts{
                     h3{
@@ -115,7 +125,6 @@ nav h4, .btn, i, h1, h3, .image{
                         &.i#{$i}{
                             background-image: url('../images/test_pic0#{$i}.jpg');
                         }
-                        
                     }
                 }
                 .texts{
@@ -144,9 +153,7 @@ nav h4, .btn, i, h1, h3, .image{
             section{
                 article{
                     .image{
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: cover;
+                        @include bg;
                     }
                     .texts{
                         width: calc(100% / 4 * 3 - 10px);
@@ -211,9 +218,7 @@ nav h4, .btn, i, h1, h3, .image{
     margin-top: 120px;
     background: linear-gradient(90deg, #333, #666, #333);
     .banner{
-        width: $gridwd;
-        max-width: $maxwd;
-        margin: 0 auto;
+        @include grid;
         padding: 80px 0;
         &.bnr01{
             display: flex;
@@ -239,9 +244,7 @@ nav h4, .btn, i, h1, h3, .image{
     background: linear-gradient(90deg, #252525, #000, #252525);
     margin-top: 120px;
     footer{
-        width: $gridwd;
-        max-width: $maxwd;
-        margin: 0 auto;
+        @include grid;
         color: #fff;
         padding: 80px 0;
         display: flex;

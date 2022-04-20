@@ -1,0 +1,274 @@
+$lh: #{'min(1rem, 40px)'};
+//header
+$hdrh1: #{'min(2.4em, 24px)'};
+$hdrh4: #{'min(1.8em, 18px)'};
+$hdrlh: #{'min(2rem, 80px)'};
+//main
+$mainh2: #{'min(7.2em, 72px)'};
+$mainh2lh: #{'min(2rem, 80px)'};
+$mainp: #{'min(2.4em, 24px)'};
+$mainplh: #{'min(1rem, 40px)'};
+$mainph: #{'min(3rem, 120px)'};
+//content
+$cnth2: #{'min(3.6em, 36px)'};
+$cnth2lh: #{'min(2rem, 80px)'};
+$cntp: #{'min(1.4em, 14px)'};
+$cntplh: #{'min(0.5rem, 20px)'};
+$cnth3 : #{'min(2.4em, 24px)'};
+$cnti : #{'min(2.4em, 24px)'};
+//footer
+$ftrh1: #{'min(1.6em, 16px)'};
+$ftrh4: #{'min(1.4em, 14px)'};
+$ftrinfo: #{'min(1.6em, 16px)'};
+$ftri: #{'min(2.4em, 24px)'};
+@mixin grid{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+@mixin img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+}
+html{
+    font-size: 3vw;
+    body{
+        i, nav h4, h1, h3, h2{
+            cursor: pointer;
+        }
+        font-size: 0.7vw;
+        .hdrWrap header, .main, .content, .banner, footer{
+            @include grid;
+            .image{
+                @include img;
+            }
+        }
+    }
+}
+
+.hdrWrap{
+    background: linear-gradient(90deg, #ff6a00, #ffb13b);
+    header{
+        @include flex;
+        line-height: $hdrlh;
+        color: #fff;
+        h1{
+            font-size: $hdrh1;
+            font-weight: 700;
+        }
+        nav{
+            width: calc(100% / 12 * 7);
+            @include flex;
+            h4{
+                font-size: $hdrh4;
+            }
+        }
+    }
+}
+
+.mainWrap{
+    background-color: #bbb;
+    .main{
+        padding-top: #{'min(6rem, 240px)'};
+        padding-bottom: #{'min(9rem, 360px)'};
+        h2{
+            font-size: $mainh2;
+            line-height: $mainh2lh;
+            font-weight: 700;
+        }
+        p{
+            width: calc(100% / 12 * 5.5);
+            font-size: $mainp;
+            line-height: $mainplh;
+            height: $mainph;
+            overflow: hidden;
+            margin-top: #{'min(1rem, 40px)'};
+        }
+    }
+}
+
+.cntWrap{
+    margin-top: #{'min(3rem, 120px)'};
+    .content{
+        header{
+            text-align: center;
+            h2{
+                font-size: $cnth2;
+                line-height: $cnth2lh;
+                font-weight: 700;
+            }
+            p{
+                width: calc(100% / 12 * 4.5);
+                font-size: $cntp;
+                line-height: $cntplh;
+                height: #{'min(1rem, 40px)'};
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        }
+        section{
+            margin-top: #{'min(2rem, 80px)'};
+            @include flex;
+            .texts{
+                h3{
+                    font-size: $cnth3;
+                    line-height: $lh;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: $cntp;
+                    line-height: $cntplh;
+                    height: $lh;
+                    overflow: hidden;
+                }
+                li{
+                    font-size: $cntp;
+                    line-height: $cntplh;
+                    &::before{
+                        content: '- ';
+                        display: inline;
+                    }
+                }
+                .sns{
+                    text-align: right;
+                    i{
+                        font-size: $cnti;
+                        line-height: $lh;  
+                    }
+                }
+                
+            }
+        }
+        &.cnt01{
+            section{
+                article{
+                    width: calc(100% / 4 - 20px);
+                    .image{
+                        height: #{'min(4.5rem, 180px)'};
+                        @for $i from 1 through 4{
+                            &.i#{$i}{
+                                background-image: url('../images/test_pic0#{$i}.jpg');
+                            }
+                        }
+                    }
+                    .texts{
+                        padding: 0 20px;
+                        padding-top: #{'min(0.5rem, 20px)'};
+                    }
+                }
+            }
+        }
+
+        &.cnt02{
+            section{
+                .image{
+                    height: #{'min(2rem, 80px)'};
+                    cursor: pointer;
+                    @for $i from 1 through 7{
+                        &.i#{$i}{
+                            background-image: url('../images/test_#{$i}.jpg');
+                        }
+                    }
+                }
+                .artGroup{
+                    &:nth-child(3){
+                        article{
+                            flex-direction: row-reverse;
+                        }
+                    }
+                    width: calc(100% / 3 - 20px);
+                    article{
+                        @include flex;
+                        margin-top: #{'min(1rem, 40px)'};
+                        .image{
+                            width: calc(100% / 4 - 5px);
+                            border-radius: 50%;
+                        }
+                        .texts{
+                            width: calc(100% / 4 * 3)
+                        }
+                    }
+                }
+                .artMid{
+                    width: calc(100% / 3 - 20px);
+                    article{
+                        .image{
+                            height: #{'min(10rem, 400px)'};
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+.bnrWrap{
+    margin-top: #{'min(3rem, 120px)'};
+    background: linear-gradient(90deg, #333, #666, #333);
+    .banner{
+        @include flex;
+        padding: #{'min(2rem, 80px)'} 0;
+        .image{
+            width: calc(100% / 6 - 20px);
+            border-radius: 50%;
+            height: #{'min(4rem, 160px)'};
+            @for $i from 1 through 6{
+                &.i#{$i}{
+                    background-image: url('../images/test_#{$i}.jpg');
+                }
+            } 
+        }
+    }
+}
+
+.ftrWrap{
+    margin-top: #{'min(3rem, 120px)'};
+    background: linear-gradient(90deg, #252525, #000, #252525);
+    footer{
+        @include flex;
+        color: #fff;
+        padding: #{'min(2rem, 80px)'} 0;
+        .ftrLeft{
+            h1{
+                font-size: $ftrh1;
+                line-height: $lh;
+                font-weight: 700;
+            }
+            .sns{
+                line-height: #{'min(2rem, 80px)'};
+                font-size: $ftri;
+            }
+            h4{
+                line-height: $lh;
+                font-size: $ftrh4;
+            }
+        }
+        .ftrRight{
+            width: calc(100% / 12 * 5);
+            nav{
+                width: 100%;
+                @include flex;
+                h4{
+                    font-size: $ftrh4;
+                    line-height: $lh;
+                }
+            }
+            .info{
+                font-size: $ftrinfo;
+                line-height: $lh;
+                background-color: #999;
+                border-radius: 20px;
+                width: calc(100% / 5 * 4 - 20px);
+                text-align: center;
+                margin-top: #{'min(2rem, 80px)'};
+                margin-left: auto;
+            }
+        }
+    }
+}
