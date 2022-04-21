@@ -1,0 +1,291 @@
+@mixin ff($name, $src){
+    @font-face {
+        font-family: '#{$name}';
+        src: url('./fonts/#{$src}') format('truetype');
+    }
+}
+
+@include ff('bold', 'GowunBatang-Bold.ttf');
+@include ff('regular', 'GowunBatang-Regular.ttf');
+@include ff('xe', 'xeicon.ttf');
+
+@mixin grid($dev){
+    @if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    }
+    margin: 0 auto;
+}
+
+@mixin pcolor($parent){
+    @if($parent == 'hdr'){
+        color: orange;
+    }
+    @else{
+        color: blue;
+    }
+}
+
+@mixin bgset{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin flexset{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+    
+    html{
+        font-size: 3vw;
+        body{
+            font-size: 0.7vw;
+            .hdrWrap header, .main, .content, .banner, footer{
+                @include grid('pc');
+                font-family: 'regular';
+                .image{
+                    @include bgset;
+                }
+            }
+            i{
+                font-family: 'xe';
+            }
+            i, .btn, nav h4, li, h1, h2, h3, .image{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .hdrWrap{
+        background: linear-gradient(90deg, #ff6a00, #ffb13b);
+        header{
+            line-height: #{'min(2rem, 80px)'};
+            @include flexset;
+            color: #fff;
+            h1{
+                font-family: 'bold';
+                font-size: #{'min(2.4em, 24px)'};
+            }
+            nav{
+                width: calc(100% / 12 * 7);
+                @include flexset;
+                h4{
+                    font-size: #{'min(1.8em, 18px)'};
+                    font-family: 'regular';
+                }
+            }
+        }
+    }
+
+    .mainWrap{
+        background-color: #bbb;
+        .main{
+            padding-top: #{'min(6rem, 240px)'};
+            padding-bottom: #{'min(9rem, 360px)'};
+            h2{
+                font-size: #{'min(7.2em, 72px)'};
+                line-height: #{'min(2rem, 80px)'};
+                font-family: 'bold';
+            }
+            p{
+                width: calc(100% / 12 * 5);
+                height: #{'min(3rem, 120px)'};
+                overflow: hidden;
+                font-size: #{'min(2.4em, 24px)'};
+                line-height: #{'min(1rem, 40px)'};
+                margin-top: #{'min(1rem, 40px)'};
+            }
+        }
+    }
+
+    .cntWrap{
+        margin-top: #{'min(3rem, 120px)'};
+        .content{
+            header{
+                text-align: center;
+                h2{
+                    font-size: #{'min(3.6em, 36px)'};
+                    line-height: #{'min(2rem, 80px)'};
+                    font-family: 'bold';
+                }
+                p{
+                    width: calc(100% / 12 * 4.5);
+                    height: #{'min(1rem, 40px)'};
+                    overflow: hidden;
+                    @include pcolor('hdr');
+                    font-size: #{'min(1.4em, 14px)'};
+                    line-height: #{'min(0.5rem, 20px)'};
+                    margin: 0 auto;
+                }
+            }
+            section{
+                margin-top: #{'min(2rem, 80px)'};
+                @include flexset;
+              p{
+                @include pcolor('art');
+                font-size: #{'min(1.4em, 14px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+              }
+              li{
+                  &::before{
+                      content: '- ';
+                      display: inline;
+                  }
+                font-size: #{'min(1.4em, 14px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+              }
+              h3{
+                font-size: #{'min(2.4em, 24px)'};
+                line-height: #{'min(1rem, 40px)'};
+                font-family: 'bold';
+              }
+            }
+            &.cnt01{
+                section{
+                    article{
+                        width: calc(100% / 4 - 20px);
+                        .image{
+                            height: #{'min(4.5rem, 180px)'};
+                            @for $i from 1 through 4{
+                                &.i#{$i}{
+                                    background-image: url('../images/test_pic0#{$i}.jpg');
+                                }
+                            }
+                        }
+                        .texts{
+                            padding: #{'min(0.5rem, 20px)'} #{'min(0.5rem, 20px)'} 0;
+                            .sns{
+                                text-align: right;
+                                font-size: #{'min(2.4em, 24px)'};
+                                line-height: #{'min(1rem, 40px)'};
+                            }
+                        }
+                    }
+                }
+            }
+            &.cnt02{
+                section{
+                    .image{
+                        @for $i from 1 through 7{
+                            &.i#{$i}{
+                                background-image: url('../images/test_#{$i}.jpg');
+                            }
+                        }
+                    }
+                    .artGroup{
+                        width: calc(100% / 3 - 20px);
+                        article{
+                            @include flexset;
+                            margin-top: #{'min(1rem, 40px)'};
+                            .image{
+                                width: calc(100% / 4 - 5px);
+                                height: #{'min(2rem, 80px)'};
+                                border-radius: 50%;
+                            }
+                            .texts{
+                                width: calc(100% / 4 * 3);
+                                p{
+                                    height: #{'min(1rem, 40px)'};
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                        &:nth-child(3){
+                            article{
+                                flex-direction: row-reverse;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .artMid{
+                        width: calc(100% / 3 - 20px);
+                        .image{
+                            height: #{'min(10rem, 400px)'};
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .bnrWrap{
+        margin-top: #{'min(3rem, 120px)'};
+        background: linear-gradient(90deg, #333, #666, #333);
+        .banner{
+            @include flexset;
+            padding: #{'min(2rem, 80px)'} 0;
+            .image{
+                width: calc(100% / 6 - 20px);
+                border-radius: 50%;
+                height: #{'min(4rem, 160px)'};
+                @for $i from 1 through 6{
+                    &.i#{$i}{
+                        background-image: url('../images/test_#{$i}.jpg');
+                    }
+                } 
+            }
+        }
+    }
+
+    .ftrWrap{
+        margin-top: #{'min(3rem, 120px)'};
+        background: linear-gradient(90deg, #252525, #000, #252525);
+        footer{
+            @include flexset;
+            color: #fff;
+            padding: #{'min(2rem, 80px)'} 0;
+            .ftrLeft{
+                h1{
+                    font-size: #{'min(1.6em, 16px)'};
+                    line-height: #{'min(1rem, 40px)'};
+                    font-family: 'bold';
+                }
+                .sns{
+                    line-height: #{'min(2rem, 80px)'};
+                    font-size: #{'min(2.4em, 24px)'};
+                }
+                h4{
+                    line-height: #{'min(1rem, 40px)'};
+                    font-size: #{'min(1.4em, 14px)'};
+                }
+            }
+            .ftrRight{
+                width: calc(100% / 12 * 5);
+                nav{
+                    width: 100%;
+                    @include flexset;
+                    h4{
+                        font-size:   #{'min(1.4em, 14px)'};
+                        line-height: #{'min(1rem, 40px)'};
+                    }
+                }
+                .info{
+                    font-size: #{'min(1.6em, 16px)'};
+                    line-height: #{'min(1rem, 40px)'};
+                    background-color: #999;
+                    border-radius: 20px;
+                    width: calc(100% / 5 * 4 - 20px);
+                    text-align: center;
+                    margin-top: #{'min(2rem, 80px)'};
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+@media (max-width:1024px) and (min-width:0px){
+    html{
+        body{
+            .hdrWrap header, .main, .content, .banner, footer{
+                @include grid('tab');   
+            }
+        }
+    }
+    
+}

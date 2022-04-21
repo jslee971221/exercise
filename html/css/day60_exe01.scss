@@ -21,9 +21,29 @@ $ftrh1: #{'min(1.6em, 16px)'};
 $ftrh4: #{'min(1.4em, 14px)'};
 $ftrinfo: #{'min(1.6em, 16px)'};
 $ftri: #{'min(2.4em, 24px)'};
-@mixin grid{
-    width: 80%;
-    max-width: 1080px;
+
+
+@mixin ff($fontname, $url){
+    @font-face{
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+@include ff('xe', 'xeicon.ttf');
+@mixin grid($dev){
+    @if($dev == 'mob'){
+        width: 90%;
+        max-width: 380px;
+        background-color: #fc0;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    } 
     margin: 0 auto;
 }
 @mixin img{
@@ -43,7 +63,7 @@ html{
         }
         font-size: 0.7vw;
         .hdrWrap header, .main, .content, .banner, footer{
-            @include grid;
+            @include grid('mob');
             .image{
                 @include img;
             }
