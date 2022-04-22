@@ -41,10 +41,20 @@
     justify-content: space-between;
 }
 
+@mixin mob{
+    @media (max-width: 420px) and (min-width: 0px){
+        @content;
+    }
+}
+
 
     
     html{
         font-size: 3vw;
+        background-color: #fc0;
+        @include mob{
+            background-color: #f00;
+        }
         body{
             font-size: 0.7vw;
             .hdrWrap header, .main, .content, .banner, footer{
@@ -287,5 +297,4 @@
             }
         }
     }
-    
 }
