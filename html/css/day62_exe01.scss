@@ -1,0 +1,327 @@
+@mixin grid{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        .hdrWrap header, .navBox, .content, .banner, footer{
+            @include grid;
+            nav h4, li, i, h1{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.hdrWrap{
+    background: linear-gradient(90deg, #ff6c00, #ff9300);
+    header{
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        line-height: #{'min(2rem, 80px)'};
+        .hdrLeft{
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% / 12 * 7);
+            h1{
+                font-size: #{'min(1.8em, 18px)'};
+                span{
+                    font-weight: 700;
+                }
+            }
+            nav{
+                width: calc(100% / 7 * 5.5);
+                display: flex;
+                justify-content: space-between;
+                font-size: #{'min(1.6em, 16px)'};
+            }
+        }
+        .hdrRight{
+            font-size: #{'min(1.6em, 16px)'};
+        }
+    }
+}
+
+.navBoxWrap{
+    background-color: #666;
+    .navBox{
+        color: #fff;
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: #{'min(1rem, 40px)'} 0;
+            ul{
+                width: calc(100% / 6 -  20px);
+                line-height: #{'min(1rem, 40px)'};
+                li{
+                    font-size: #{'min(1.4em, 14px)'};
+                    &:nth-child(1){
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.cntWrap{
+    margin-top: #{'min(2rem, 80px)'};
+    .content{
+        header{
+            text-align: center;
+            h2{
+                font-size: #{'min(2.8em, 28px)'};
+                font-weight: 700;
+                line-height: #{'min(2rem, 80px)'};
+            }
+            p{
+                width: calc(100% / 12 * 4.5);
+                font-size: #{'min(1.2em, 12px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+                height: #{'min(1rem, 40px)'};
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        }
+        section{
+            margin-top: #{'min(2rem, 80px)'};
+            p{
+                font-size: #{'min(1.2em, 12px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+                overflow: hidden;
+                color: #666;
+            }
+        }
+
+        &.cnt01{
+            section{
+                height: #{'min(11rem, 440px)'};
+                position: relative;
+                .textsView{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    width: calc(100% / 3 - 20px);
+                    height: #{'min(2rem, 80px)'};
+                    position: absolute;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    line-height: #{'min(1rem, 40px)'};
+                    padding-left: calc(100% / 4 * 0.05);
+                    padding-right: calc(100% / 4 * 0.1);
+                    h3{
+                        font-size: #{'min(1.2em, 12px)'};
+                        font-weight: 700;  
+                    }
+                    .num{
+                        font-size: #{'min(1.2em, 12px)'};
+                        font-weight: 700;
+                    }
+                    p{
+                        width: calc(100% / 4 * 3 - 20px);
+                        height: #{'min(1rem, 40px)'};
+                    }
+                    i{
+                        font-size: #{'min(2em, 20px)'};
+                    }
+                }
+                .btns{
+                    width: 110%;
+                    height: #{'min(1rem, 40px)'};
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    margin-left: -5%;
+                    i{
+                        font-size: #{'min(3em, 30px)'};
+                    }
+                }
+                .titleView{
+                    width: calc(100% / 12 * 0.5);
+                    position: absolute;
+                    left: calc(100% / 12 * 4);
+                    top: #{'min(0.5rem, 20px)'};
+                    overflow: hidden;
+                    .titleGroup{
+                        width: 800%;
+                        display: flex;
+                        h3{
+                            width: calc(100% / 8);
+                            font-weight: 700;
+                            font-size: #{'min(4.8em, 48px)'};
+                            line-height: #{'min(1.25rem, 50px)'};
+                        }
+                    }
+                }
+                .artView{
+                    width: 100%;
+                    height: #{'min(9rem, 360px)'};
+                    overflow: hidden;
+                    .artGroup{
+                        width: 266.67%;
+                        display: flex;
+                        justify-content: space-between;
+                        article{
+                            width: calc(100% / 8 - 20px);
+                            .image{
+                                width: calc(100% / 4 * 3.5);
+                                height: #{'min(9rem, 360px)'};
+                                background-color: #999;
+                                margin: 0 auto;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
+        &.cnt02{
+            section{
+                article{
+                    .image{
+                        background-color: #999;
+                        width: 100vw;
+                        height: #{'min(10rem, 400px)'};
+                        margin-left: #{'min(calc((100vw - 1080px) / -2), calc((100vw - 80vw) / -2))'}
+                    }
+                }
+            }
+        }
+
+        &.cnt03{
+            header{
+                margin-left: calc(100% / 12 * 0.5);
+                text-align: left;
+                p{
+                    margin: 0;
+                }
+            }
+            section{
+                display: flex;
+                justify-content: space-between;
+                article{
+                    width: calc(100% / 12 * 7 - 20px);
+                    &:nth-child(1){
+                        width: calc(100% / 12 * 5 - 20px);
+                        display: flex;
+                        flex-direction: column-reverse;
+                        .texts{
+                            padding: 0 calc(100% / 5 * 0.5);
+                            margin-top: 0;
+                        }
+                        .image{
+                            margin-top: #{'min(1rem, 40px)'};
+                        }
+                    }
+                    .image{
+                        background-color: #999;
+                        height: #{'min(11rem, 440px)'};
+                        
+                    }
+                    .texts{
+                        padding: 0 calc(100% / 7 * 0.5);
+                        margin-top: #{'min(1rem, 40px)'};
+                        h3{
+                            font-size: #{'min(2rem, 20px)'};
+                            font-weight: 700;
+                            line-height: #{'min(1rem, 40px)'};
+                        }
+                        p{
+                            height: #{'min(2rem, 80px)'};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bnrWrap{
+    margin-top: #{'min(2rem, 80px)'};
+    .bnr01{
+        header{
+            text-align: center;
+            h2{
+                font-size: #{'min(2.8em, 28px)'};
+                font-weight: 700;
+                line-height: #{'min(2rem, 80px)'};
+            }
+            p{
+                width: calc(100% / 12 * 4.5);
+                font-size: #{'min(1.2em, 12px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+                height: #{'min(1rem, 40px)'};
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        }
+        section{
+            margin-top: #{'min(2rem, 80px)'};
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .prog{
+                width: calc(50% - 20px);
+                &:nth-child(2)~.prog{
+                    margin-top: #{'min(1rem, 40px)'};
+                }
+                .texts{
+                    display: flex;
+                    justify-content: space-between;
+                    color: #666;
+                    font-size: #{'min(2rem, 20px)'};
+                    font-weight: 700;
+                    line-height: #{'min(1rem, 40px)'};
+                }
+                .barBg{
+                    background-color: #ccc;
+                    height: #{'min(0.5rem, 20px)'};
+                    border-radius: 5px;
+                    .bar{
+                        width: 80%;
+                        background-color: #3333ff;
+                        height: #{'min(0.5rem, 20px)'};
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ftrWrap{
+    margin-top: #{'min(2rem, 80px)'};
+    background: linear-gradient(90deg, #333, #000, #333);
+    footer{
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: #{'min(1.5rem, 60px)'} 0;
+        h1{
+            line-height: #{'min(1rem, 40px)'};
+            font-size: #{'min(2em, 20px)'};
+            span{
+                font-weight: 700;
+            }
+        }
+        p{
+            width: calc(100% / 12 * 6 - 20px);
+            text-align: right;
+            height: #{'min(1rem, 40px)'};
+            overflow: hidden;
+            line-height: #{'min(0.5rem, 20px)'};
+            font-size: #{'min(1.2em, 12px)'};
+        }
+    }
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/day62_exe01.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.hdr').load('./inc/header.html', function(){
+                $(this).find('h1').click(function(){
+                    alert('!!');
+                });
+            });
+            $('.ftr').load('./inc/footer.html');
+
+            // $('.hdr').on('click', 'h1', function(){
+            //     alert('!!');
+            // });
+        });
+    </script>
+</head>
+<body>
+    <div class="hdr"></div>
+    <!-- <div class="hdrWrap">
+        <header>
+            <div class="hdrLeft">
+                <h1><span>SHAM</span>MAH</h1>
+                <nav>
+                    <h4>ABOUT</h4>
+                    <h4>NEWS</h4>
+                    <h4>PORTFOLIO</h4>
+                    <h4>BOARD</h4>
+                    <h4>ALBUM</h4>
+                    <h4>CONTACT</h4>
+                </nav>
+            </div>
+            <div class="hdrRight">
+                <i class="xi-search"></i>
+            </div>
+        </header>
+    </div>
+
+    <div class="navBoxWrap">
+        <div class="navBox">
+            <nav>
+                <ul>
+                    <li>ABOUT</li>
+                    <li>My Name</li>
+                    <li>Birth Day</li>
+                    <li>Education</li>
+                </ul>
+                <ul>
+                    <li>News</li>
+                    <li>Today News</li>
+                    <li>Social</li>
+                    <li>Information</li>
+                </ul>
+                <ul>
+                    <li>PORTFOLIO</li>
+                    <li>Web Design</li>
+                    <li>Web Development</li>
+                    <li>Printout</li>
+                    <li>My Photo</li>
+                    <li>Illustration</li>
+                </ul>
+                <ul>
+                    <li>BOARD</li>
+                    <li>Notice</li>
+                    <li>Free Board</li>
+                    <li>Contact me</li>
+                </ul>
+                <ul>
+                    <li>ALBUM</li>
+                    <li>Our Family</li>
+                    <li>My Friends</li>
+                </ul>
+                <ul>
+                    <li>CONTACT</li>
+                    <li>Location</li>
+                    <li>E-mail</li>
+                    <li>Mobile Phone</li>
+                </ul>
+            </nav>
+        </div>
+    </div> -->
+
+    <div class="cntWrap">
+        <div class="content cnt01">
+            <header>
+                <h2>Content title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum repellendus incidunt quidem blanditiis molestias unde labore?</p>
+            </header>
+            <section>
+                <div class="btns">
+                    <i class="xi-angle-left"></i>
+                    <i class="xi-angle-right"></i>
+                </div>
+                <div class="titleView">
+                    <div class="titleGroup">
+                        <h3>내용제목1</h3>
+                        <h3>내용제목2</h3>
+                        <h3>내용제목3</h3>
+                        <h3>내용제목4</h3>
+                        <h3>내용제목5</h3>
+                        <h3>내용제목6</h3>
+                        <h3>내용제목7</h3>
+                        <h3>내용제목8</h3>
+                    </div>
+                </div>
+                <div class="textsView">
+                    <h3>Lorem Ipsum Dolor Sit1</h3>
+                    <div class="num">
+                        <span>1</span>/<span>8</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                    <div class="sns">
+                        <i class="xi-facebook"></i>
+                        <i class="xi-pinterest"></i>
+                    </div>
+                </div>
+                <div class="artView">
+                    <div class="artGroup">
+                        <article>
+                            <div class="image i1">1</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit1</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i2">2</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit2</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i3">3</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit3</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i4">4</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit4</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i5">5</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit5</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i6">6</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit6</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i7">7</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit7</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="image i8">8</div>
+                            <div class="texts">
+                                <h3>Lorem Ipsum Dolor Sit8</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, id. Repellat, ipsam quia tempora molestiae quaerat nihil dicta qui ex, explicabo totam nostrum</p>
+                                <div class="sns">
+                                    <i class="xi-facebook"></i>
+                                    <i class="xi-pinterest"></i>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt02">
+            <header>
+                <h2>Content Title</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quae qui a, saepe asperiores eveniet ipsum inventore omnis et repellat aspernatur suscipit laudantium quisquam nostrum explicabo officia animi error deleniti.</p>
+            </header>
+            <section>
+                <article>
+                    <div class="image"></div>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt03">
+            <header>
+                <h2>Content Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed deserunt cum, tempore iste aliquid dicta atque amet rem aliquam delectus, odio itaque aperiam sint consectetur vitae repudiandae facere eos?</p>
+            </header>
+            <section>
+                <article>
+                    <div class="image i1"></div>
+                    <div class="texts">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed deserunt cum, tempore iste aliquid dicta atque amet rem aliquam delectus, odio itaque aperiam sint consectetur vitae repudiandae facere eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed deserunt cum, tempore iste aliquid dicta atque amet rem aliquam delectus, odio itaque aperiam sint consectetur vitae repudiandae facere eos?</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="image i2"></div>
+                    <div class="texts">
+                        <h3>Segment Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed deserunt cum, tempore iste aliquid dicta atque amet rem aliquam delectus, odio itaque aperiam sint consectetur vitae repudiandae facere eos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed deserunt cum, tempore iste aliquid dicta atque amet rem aliquam delectus, odio itaque aperiam sint consectetur vitae repudiandae facere eos?</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    <div class="bnrWrap">
+        <div class="banner bnr01">
+            <header>
+                <h2>Division Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quisquam! Autem, repellat? Suscipit iste laborum, porro inventore, maiores fugiat impedit saepe ducimus alias explicabo voluptas neque provident dolor aut. Rem!</p>
+            </header>
+            <section>
+                <div class="prog">
+                    <div class="texts">
+                        <h3>Segment</h3>
+                        <div class="per">
+                            <span>80</span>%
+                        </div>
+                    </div>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="prog">
+                    <div class="texts">
+                        <h3>Segment</h3>
+                        <div class="per">
+                            <span>80</span>%
+                        </div>
+                    </div>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="prog">
+                    <div class="texts">
+                        <h3>Segment</h3>
+                        <div class="per">
+                            <span>80</span>%
+                        </div>
+                    </div>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="prog">
+                    <div class="texts">
+                        <h3>Segment</h3>
+                        <div class="per">
+                            <span>80</span>%
+                        </div>
+                    </div>
+                    <div class="barBg">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="ftr"></div>
+    <!-- <div class="ftrWrap">
+        <footer>
+            <h1><span>LOGO</span>HERE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo voluptates numquam quibusdam eaque dignissimos? Corrupti in voluptates debitis reiciendis facilis numquam amet tempora adipisci quod commodi voluptas, iure esse fugit!</p>
+        </footer>
+    </div> -->
+</body>
+</html>
