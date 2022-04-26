@@ -8,6 +8,7 @@ html{
     font-size: 3vw;
     body{
         font-size: 0.7vw;
+        position: relative;
         .hdrWrap header, .navBox, .content, .banner, footer{
             @include grid;
             nav h4, li, i, h1{
@@ -19,6 +20,11 @@ html{
 
 .hdrWrap{
     background: linear-gradient(90deg, #ff6c00, #ff9300);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
     header{
         display: flex;
         justify-content: space-between;
@@ -49,6 +55,7 @@ html{
 
 .navBoxWrap{
     background-color: #666;
+    margin-top: #{'min(2rem, 80px)'};
     .navBox{
         color: #fff;
         nav{

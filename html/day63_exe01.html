@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div{
+            width: 100vw;
+            height: 100vh;
+        }
+        .index{
+            display: flex;
+            justify-content: space-between;
+        }
+        .index>div{
+            width: 100% / 5;
+            height: 100vh;
+            font-size: 72px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .index>div:nth-child(1){
+            background-color: red;
+        }
+        .index>div:nth-child(5){
+            background-color: purple;
+        }
+        .index>div:nth-child(2){
+            background-color: yellow;
+        }
+        .index>div:nth-child(4){
+            background-color: blue;
+        }
+        .index>div:nth-child(3){
+            background-color: orange;
+        }
+        div:nth-child(2){
+            background-color: red;
+        }
+        div:nth-child(3){
+            background-color: purple;
+        }
+        div:nth-child(4){
+            background-color: yellow;
+        }
+        div:nth-child(5){
+            background-color: blue;
+        }
+        div:nth-child(6){
+            background-color: orange;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.index div').click(function(){
+                var num = Number($(this).attr('data-num'));
+                var top = $('body>div').eq(num + 1).offset().top;
+                $('html').animate({
+                    scrollTop : top
+                }, 500);
+            });
+
+            $('body>div:eq(0)~').click(function(){
+                $('html').animate({
+                    scrollTop : 0
+                }, 500);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="index">
+        <div data-num="0">page1</div>
+        <div data-num="2">page2</div>
+        <div data-num="4">page3</div>
+        <div data-num="3">page4</div>
+        <div data-num="1">page5</div>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
