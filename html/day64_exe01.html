@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            overflow-y: hidden;
+        }
+        div{
+            width: 100vw;
+            height: 100vh;
+            font-size: 80px;
+            text-align: center;
+        }
+        div:nth-child(1){
+            background-color: orange;
+        }
+        div:nth-child(2){
+            background-color: green;
+        }
+        div:nth-child(3){
+            background-color: brown;
+        }
+        div:nth-child(4){
+            background-color: skyblue;
+        }
+        div:nth-child(5){
+            background-color: palevioletred;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var loc = [];
+            var ind = 0;
+            var flag = false;
+            var wheel = 0;
+
+
+            for(var i = 0; i < $('body>div').length; i++){
+                loc[i] = $('body>div').eq(i).offset().top;
+            }
+            $('html').animate({
+                        scrollTop : 0
+                        }, 0, function(){
+                    });
+
+            $(window).on('mousewheel', function(eve){
+                wheel = eve.originalEvent.wheelDelta;
+                 if(!flag){
+                     if(wheel > 0){
+                         ind--;
+                         flag = true; // 닫아버림 (닫혀있는 동안에는 ++이 진행되지 않음.)
+                         if(ind <= 0){
+                            ind = 0;
+                        }
+                     }else{
+                         ind++;
+                         flag = true; // 닫아버림 (닫혀있는 동안에는 ++이 진행되지 않음.)
+                         if(ind >= 4){
+                            ind = 4;
+                        }
+                     }
+                     $('html').animate({
+                        scrollTop : loc[ind]
+                        }, 300,'easeInBounce', function(){
+                            flag = false; // 동작이 끝나고 열어줌
+                    });
+                 }
+                
+            });
+            
+            //scroll과 mousewheel의 차이
+            /*scroll은 스크롤바가 있어서 움직일 때, 스크롤바를 잡아서 움직여도 동작함
+            mousewheel은 스크롤바가 없어도 마우스가 휠을 사용할 때, 스크롤바와 상관이 없음
+            
+            전체에서 동작하는 이벤트의 경우
+            선택자가 1. window냐 2.document냐 3.body,html이냐에 대해 고민해봐야함
+            */
+        });
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>
