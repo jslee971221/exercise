@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .banner{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        .banner header{
+            text-align: center;
+        }
+        .banner header h2{
+            font-size: 36px;
+            line-height: 80px;
+            font-weight: 700;
+        }
+        .banner header p{
+            width: calc(100% / 12 * 4.5);
+            height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #666;
+        }
+        .banner section{
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .banner section .progBar{
+            margin-top: 40px;
+            width: calc(100% / 12 * 5.5);
+        }
+        .banner .texts{
+            line-height: 40px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .banner .bar{
+            width: 100%;
+            height: 20px;
+            border-radius: 5px;
+            background-color: #cccccc;
+            margin-top: 10px;
+        }
+        .banner .prog{
+            width: 80%;
+            height: 20px;
+            border-radius: 5px;
+            background-color: #3333ff;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var sp = $('.texts span');
+            var per = 0;
+            sp.each(function(a){
+                per = $(this).attr('data-num');
+                $({percnet : 0}).animate({
+                    percent : per
+                }, {
+                    duration : 3000,
+                    progress : function(){
+                        sp.eq(a).text(parseInt(this.percent));
+                        $('.prog').eq(a).css({width : this.percent + '%'});
+                    }
+                });
+            });
+            //한개 이상, 배열로 값이 들어올 때 쓸 수 있는 것
+            //for(var i = 0; i < $('.texts span').length(); i++)
+            //파라미터를 사용하면 인덱스 번호를 얻을 수 있음
+            //for문의 i처럼 활용하면 됨.
+        });
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <header>
+            <h2>Division Title</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam veniam quis molestias quibusdam, sapiente minima voluptate laudantium illum. Sunt quia ducimus iste temporibus est obcaecati a amet. Qui, molestiae est.</p>
+        </header>
+        <section>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="80"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="50"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="90"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="20"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="30"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="100"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="20"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="30"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="100"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="50"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="90"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+            <div class="progBar">
+                <div class="texts">
+                    <h3>Segment</h3>
+                    <h4><span data-num="20"></span>%</h4>
+                </div>
+                <div class="bar">
+                    <div class="prog"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
