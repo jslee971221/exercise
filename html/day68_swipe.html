@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .swipe{
+            width: 150vw;
+            height: 500px;
+            outline: 1px solid red;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+    </style>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile.custom.js"></script>
+    <script src=""></script>
+    <script>
+        $(function(){
+            $('.swipe').swiperight(function(){
+                alert('right');
+            });
+            $('.swipe').swipeleft(function(){
+                alert('left');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="swipe">
+        <a href="https://www.naver.com">네이버</a>
+    </div>
+</body>
+</html>

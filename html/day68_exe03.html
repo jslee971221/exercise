@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        $(function(){          
+            // $('button').first().click(function(){
+            //     var name = prompt('이름을 입력하세요');
+            //     $.cookie(name,'on',{expires:7});
+            //     if($.cookie(name)){
+            //         alert('환영합니다.');
+            //     }else if(name){
+            //         alert('재방문입니다.');
+            //     }
+            // });
+            // $('button').last().click(function(){
+            //     var name = prompt('이름을 입력하세요');
+            //     $.cookie(name,'on',{expires:-1});
+            // });
+            $(function(){
+            var name = prompt('이름을 입력하세요');
+            $('button').eq(0).click(function(){
+                $.cookie(name, 'on', {expires:7});
+            });
+            $('button').eq(1).click(function(){
+                $.cookie(name, 'on', {expires:-1});
+            });
+            if($.cookie(name)){
+                alert('재방문입니다');
+            }else{
+                alert('환영합니다');
+            }
+            console.log($.cookie(name));
+        });
+        });
+    </script>
+</head>
+<body>
+    <button>쿠키입력</button>
+    <button>쿠키삭제</button>
+</body>
+</html>

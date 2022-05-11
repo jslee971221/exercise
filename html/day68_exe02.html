@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .note{
+            width: 500px;
+            height: 500px;
+            background-color: #fc0;
+            padding: 100px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            $('.note button').click(function(){
+                $.cookie('may','on',{expires:7});
+                // {expires:7}); 7일동안 쿠키를 갖고 있는다라는 뜻
+                if($.cookie('may') == 'on'){
+                    $('.note').css({display : 'none'});             
+                }
+                // may가 on을 갖고 있고 $.cookie('may') == 'on' may가 on이 될 때 라고 if문으로 적용시켜준 거
+            });
+            if($.cookie('may') == 'on'){
+                $('.note').css({display : 'none'});             
+            }
+            $('button').click(function(){
+                $.cookie('may','on',{expires:-1});
+                console.log($.cookie('may'))
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="note">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae pariatur cum, dolorum iure officiis cupiditate omnis adipisci quam ducimus, voluptatibus veniam ea natus dicta quae, magni quibusdam? Eos, dicta cum?</p>
+        <button>그만보기</button>
+    </div>
+    <button>쿠키삭제</button>
+</body>
+</html>

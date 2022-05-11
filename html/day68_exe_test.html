@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 150px auto;
+        }
+        .artView{
+            overflow: hidden;
+        }
+        .artGroup{
+            transition: margin-left 0.5s;
+            width: 600%;
+            display: flex;
+            justify-content: space-between;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+        article{
+            width: calc(100% / 6);
+            height: 200px;
+            color: #fff;
+            font-size: 36px;
+            line-height: 40px;
+            text-transform: uppercase;
+        }
+        article:nth-child(1){
+            background-color: black;
+        }
+        article:nth-child(2){
+            background-color: red;
+        }
+        article:nth-child(3){
+            background-color: blue;
+        }
+        article:nth-child(4){
+            background-color: green;
+        }
+        article:nth-child(5){
+            background-color: purple;
+        }
+        article:nth-child(6){
+            background-color: orange;
+        }
+    </style>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile.custom.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            var ag = $('.artGroup');
+            var at = $('.artGroup article');
+            ag.swipeleft(function(){
+                i++;
+                if(i>=5){
+                    i=5;
+                }
+                ag.css({marginLeft : i * -100+'%'});
+            });
+            ag.swiperight(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                ag.css({marginLeft : i * -100+'%'});
+            });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <div class="artView">
+            <div class="artGroup">
+                <article>1</article>
+                <article>2</article>
+                <article>3</article>
+                <article>4</article>
+                <article>5</article>
+                <article>6</article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

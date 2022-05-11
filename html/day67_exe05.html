@@ -29,6 +29,23 @@
             transform: rotate(-90deg);
         }
     </style>
+    <script>
+        $(function(){
+            var percent = 629 - (629 / 100 * 25);
+            $({per : 629}).animate({
+                per : percent
+            }, {
+                duration : 500,
+                progress : function(){
+                    $('svg circle').css({
+                        strokeDashoffset: this.per 
+                    });
+                    console.log(this.per);
+                }
+            });
+        });
+
+    </script>
 </head>
 <body>
     <svg>

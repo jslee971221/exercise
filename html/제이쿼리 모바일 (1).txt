@@ -1,0 +1,45 @@
+https://api.jquerymobile.com/
+들어가서 api 도큐먼테이션 들어간 후 
+쓰고자 하는 이벤트 함수 눌러서 코드 복사하면 되는데
+얘네 js파일을 쓰려면 
+https:// 적힌 주소로 들어가서 js코드 복사한 후 js파일로 만들고
+그걸 스크립트 src로 가져오면 됨
+<script src="./js/jquery.mobile.custom.js"></script>
+이거는 custom 다운로드에서 이벤트 함수만 사용할 거니까
+event 목록에서 터치만 체크하고 다운로드해서 파일 js로 옮기면 됨
+
+<style>
+        .swipe{
+            width: 150vw;
+            height: 500px;
+            outline: 1px solid red;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+    </style>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile.custom.js"></script>
+    <script src=""></script>
+    <script>
+        $(function(){
+            $('.swipe').swiperight(function(){
+                alert('right');
+            });
+            $('.swipe').swipeleft(function(){
+                alert('left');
+            });
+        });
+
+
+touch-action: pan-y;
+-ms-touch-action: pan-y;을 사용하는 이유는
+좌우로 넘치는 것들을 제한해줌
+
+2번째 
+https://github.com/carhartl/jquery-cookie 
+제이쿼리 쿠키
+여기서 쿠키 js 파일 복사해서 만든 후 내 스크립트로 적용
+
+
+
+
