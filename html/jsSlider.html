@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    .slider {
+    border-radius: 5px;
+    background: #E0E0E0;
+    background: linear-gradient(left top, #E0E0E0, #EEEEEE);
+    width: 310px;
+    height: 15px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+
+    .thumb {
+    width: 10px;
+    height: 25px;
+    border-radius: 3px;
+    position: relative;
+    top: -5px;
+    background: blue;
+    cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="slider" class="slider">
+    <div class="thumb"></div>
+  </div>
+
+  <script>
+    let thumb = slider.querySelector('.thumb');
+
+    thumb.onmousedown = function(event) { //마우스 눌렀을 때
+      event.preventDefault();  //기본 이벤트를 삭제해줌
+
+      let shiftX = event.clientX - thumb.getBoundingClientRect().left; 
+      //(뷰포트 기준으로 left 받음. 클릭된 지점에서 버튼의 위치를 뺌. 버튼과 이벤트 발생 지점의 거리를 계산하여 mousemove시에 슬라이더의 끝에서부터 시작될 수 있도록
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+
+      function onMouseMove(event) {
+        let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+        // 이벤트 발생 위치에서 슬라이더의 위치를 빼서 슬라이더 내부에서의 거리를 계산, 위에서 가져온 버튼과 이벤트 위치의 차이를 빼서 슬라이더의 시작점을 0으로 -> 버튼 width 10px의 어느 지점에서 클릭해도 0부터 움직이게
+
+        if (newLeft < 0) {
+          newLeft = 0;
+        }
+        //왼쪽이 슬라이더의 범위를 벗어나지 않도록 0으로 제한을 둠.
+        let rightEdge = slider.offsetWidth - thumb.offsetWidth;
+        //슬라이더의 너비 빼기 버튼의 너비로 이동 범위를 계산
+
+        if (newLeft > rightEdge) {
+          newLeft = rightEdge;
+        }
+        //최대 이동 범위 제한
+        thumb.style.left = newLeft + 'px';   
+      }
+
+      function onMouseUp() {
+        document.removeEventListener('mouseup', onMouseUp);
+        document.removeEventListener('mousemove', onMouseMove);
+      }
+      //마우스에서 손을 떼었을 때 이벤트 리스너를 삭제
+    };
+
+    thumb.ondragstart = function() {
+      return false;
+    };
+    //기본 이벤트 삭제
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭해주세요.</h1>
+    <h1>클릭해주세요.</h1>
+    <h1>클릭해주세요.</h1>
+    <h1>클릭해주세요.</h1>
+    <h1>클릭해주세요.</h1>
+    <h1>클릭해주세요.</h1>
+
+
+    <script>
+        //ES5
+        var h11 = document.getElementsByTagName('h1');
+        for(var i = 0; i < h11.length; i++){
+            h11[i].onclick = function(){
+                alert('!!');
+            }
+        }
+        
+        //ES6
+        const h12 = document.querySelectorAll('h1');
+        h12.forEach((h1, i) => h1.addEventListener('click', () => alert(i + 1)));
+    </script>
+</body>
+</html>
